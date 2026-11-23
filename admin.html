@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard — DEMO — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
+<meta name="description" content="Unified admin dashboard demo for Al Kareem Physiotherapy and Rehabilitation Centre. Demo only — no live data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="admin" class="admin-page">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="demo-bar">DEMO PREVIEW — No real bookings, orders, or payments. Nothing here is live.</div>
+<header class="admin-header">
+  <a class="admin-brand" href="admin.html">
+    <img src="logo.jpg" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo" width="56" height="56" class="logo">
+    <span><strong>Admin Dashboard — DEMO</strong><br><span class="admin-sub">Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</span></span>
+  </a>
+  <div class="admin-user">
+    <span>Demo Admin</span>
+    <button type="button" class="btn small outline" data-demo-logout>Log out</button>
+  </div>
+</header>
+<div class="admin-layout">
+  <nav class="admin-sidebar" aria-label="Admin sections">
+    <a href="#overview" class="active" aria-current="page">Overview</a>
+    <a href="#appointments">Appointments</a>
+    <a href="#patients">Patients</a>
+    <a href="#products">Products</a>
+    <a href="#inventory">Inventory</a>
+    <a href="#orders">Orders</a>
+    <a href="#customers">Customers</a>
+    <a href="#courses">Courses</a>
+    <a href="#students">Students</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#blog">Blog &amp; Content</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#settings">Settings</a>
+    <a href="#reports">Reports</a>
+  </nav>
+
+  <main id="main" class="admin-main">
+    <section id="overview" aria-labelledby="overview-heading">
+      <h1 id="overview-heading">Overview</h1>
+      <p class="lead">Demo — no live data. Counts below are honest counts only.</p>
+      <div class="summary-cards">
+        <div class="card summary-card"><p class="summary-label">Today&rsquo;s appointments</p><p class="summary-count">0</p><p class="form-note">Demo — no live data</p></div>
+        <div class="card summary-card"><p class="summary-label">Pending assignments to mark</p><p class="summary-count">0</p><p class="form-note">Demo — no live data</p></div>
+        <div class="card summary-card"><p class="summary-label">New orders</p><p class="summary-count">0</p><p class="form-note">Demo — no live data</p></div>
+        <div class="card summary-card"><p class="summary-label">Products</p><p class="summary-count">1</p><p class="form-note">Demo — no live data</p></div>
+        <div class="card summary-card"><p class="summary-label">Courses</p><p class="summary-count">0</p><p class="form-note">Demo — no live data</p></div>
+        <div class="card summary-card"><p class="summary-label">Students</p><p class="summary-count">0</p><p class="form-note">Demo — no live data</p></div>
+      </div>
+    </section>
+
+    <section id="appointments" aria-labelledby="appointments-heading">
+      <h2 id="appointments-heading">Appointments</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Date</th><th>Patient</th><th>Service</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="4">No appointments yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="patients" aria-labelledby="patients-heading">
+      <h2 id="patients-heading">Patients</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Phone</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">No patient records yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Products</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Product</th><th>Price</th><th>Stock</th><th>Category</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Shoulder Pulley</td><td>Rs 850</td><td><span class="needed">[NEEDED]</span></td><td>Rehabilitation Equipment — assignment TO CONFIRM</td><td><span class="status-pill">No data</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="form-note">One real product only. No other products are listed until the clinic confirms name, price, stock and category.</p>
+    </section>
+
+    <section id="inventory" aria-labelledby="inventory-heading">
+      <h2 id="inventory-heading">Inventory</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Product</th><th>Stock</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3"><span class="needed">[NEEDED]</span> — stock levels not confirmed.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="orders" aria-labelledby="orders-heading">
+      <h2 id="orders-heading">Orders</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Order</th><th>Customer</th><th>Product</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="5">No orders yet. Checkout and payment are skipped in this demo.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="customers" aria-labelledby="customers-heading">
+      <h2 id="customers-heading">Customers</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Phone</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">No customer records yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="courses" aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Courses</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Course</th><th>Instructor</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">No courses yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="students" aria-labelledby="students-heading">
+      <h2 id="students-heading">Students</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Course</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">No student records yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="instructors" aria-labelledby="instructors-heading">
+      <h2 id="instructors-heading">Instructors</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Name</th><th>Qualifications</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Dr. Muhammad Imran</td><td>DPT, MS (MNPT)</td><td><span class="status-pill">Confirmed</span></td></tr>
+        </tbody>
+      </table></div>
+      <p class="form-note">AHPC REG-20261030-18414. No other instructor is listed — any additional instructor is <span class="needed">[NEEDED]</span>.</p>
+    </section>
+
+    <section id="blog" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">Blog &amp; Content</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Article</th><th>Author</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="3">No articles yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="reviews" aria-labelledby="reviews-heading">
+      <h2 id="reviews-heading">Reviews</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Review</th><th>Status</th></tr></thead>
+        <tbody><tr><td colspan="2">No reviews yet.</td></tr></tbody>
+      </table></div>
+      <p class="form-note">Status: <span class="status-pill">No data</span></p>
+    </section>
+
+    <section id="settings" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Settings</h2>
+      <h3>Roles</h3>
+      <ul>
+        <li>Admin</li>
+        <li>Doctor / Instructor</li>
+        <li>Student</li>
+        <li>Patient</li>
+      </ul>
+      <p>Staff role for Muhammad Bilal: <span class="needed">[NEEDED]</span></p>
+      <p>Writer role: <span class="needed">[NEEDED]</span></p>
+      <p class="form-note">Clinic contact: <a href="tel:03051974180">0305-1974180</a> • <a href="tel:03008681452">0300-8681452</a> • <a href="tel:03041945896">0304-1945896</a> • <a href="mailto:drimranphysio297@gmail.com">drimranphysio297@gmail.com</a></p>
+      <p class="form-note">Timings: 9:00 AM – 10:00 PM (flyer shows &ldquo;9-10 PM&rdquo; — confirm)</p>
+    </section>
+
+    <section id="reports" aria-labelledby="reports-heading">
+      <h2 id="reports-heading">Reports</h2>
+      <p>Reports show real counts only. No data yet.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Report</th><th>Count</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Appointments</td><td>0</td><td><span class="status-pill">No data</span></td></tr>
+          <tr><td>Orders</td><td>0</td><td><span class="status-pill">No data</span></td></tr>
+          <tr><td>Students</td><td>0</td><td><span class="status-pill">No data</span></td></tr>
+          <tr><td>Courses</td><td>0</td><td><span class="status-pill">No data</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

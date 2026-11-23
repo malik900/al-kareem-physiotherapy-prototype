@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog &amp; Knowledge Center — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
+<meta name="description" content="Physiotherapy and rehabilitation information from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. No articles published yet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* Blog page — plainest module (design-system §6.4). Page-scoped fallback only;
+   shared style.css owns the chrome. Tokens byte-exact from design-system §1. */
+:root{--navy:#0a2540;--blue:#1b6fb5;--blue-soft:#e8f1fb;--ink:#12263a;--muted:#54697e;--line:#d7e3ef}
+.blog-main{background:#fff;color:var(--ink)}
+.blog-column{max-width:700px;margin:0 auto;padding:0 18px 70px}
+.blog-column h1,.blog-column h2,.blog-column h3{color:var(--navy);line-height:1.2}
+.blog-column h1{font-size:clamp(28px,5vw,36px);font-weight:800}
+.blog-column h2{font-size:24px;font-weight:800;margin:46px 0 8px}
+.blog-column h3{font-size:18px;font-weight:800}
+.blog-column p{line-height:1.7;font-size:18px}
+.blog-column .lead{color:var(--muted);font-size:16px}
+.blog-column a{color:var(--blue)}
+.blog-empty{border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:18px}
+.blog-empty p{margin:0;font-size:16px;color:var(--muted)}
+.blog-categories{list-style:none;padding:0;margin:18px 0 0}
+.blog-categories li{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:16px}
+.blog-categories li span:last-child{color:var(--muted);white-space:nowrap}
+.blog-search{display:flex;gap:10px;margin-top:18px}
+.blog-search input{flex:1}
+.blog-note{font-size:14.5px;color:var(--muted);line-height:1.6}
+.blog-editorial{background:var(--blue-soft);border-left:4px solid var(--blue);border-radius:12px;padding:13px 16px;margin-top:18px}
+.blog-editorial p{font-size:14.5px;line-height:1.6;margin:0}
+.needed{color:#a10000;background:#fdecec;border:1px dashed #d33;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:700}
+.demo-tag{color:#4a3600;background:#ffd166;border-radius:999px;padding:1px 10px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+</style>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body data-page="blog">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
+
+<div class="topbar">
+  <span>Timings: 9:00 AM – 10:00 PM (flyer shows &ldquo;9-10 PM&rdquo; — confirm)</span>
+  <span aria-hidden="true">&bull;</span>
+  <a href="tel:03051974180">0305-1974180</a>
+  <span aria-hidden="true">&bull;</span>
+  <span>Main: Super Chowk, Lodhran</span>
+  <span aria-hidden="true">|</span>
+  <span>2nd: Kherror Pakka Road, Lodhran</span>
+</div>
+
+<header class="site">
+  <div class="brand-row">
+    <a class="brand-link" href="index.html">
+      <img class="logo-img" src="logo.jpg" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo" width="56" height="56">
+      <span>
+        <span class="name">Al Kareem <span>Physiotherapy</span><br>&amp; Rehabilitation Centre</span>
+        <span class="sub">Lodhran &bull; DPT &bull; MS (MNPT)</span>
+      </span>
+    </a>
+    <div class="head-actions">
+      <button class="icon-btn" id="search-toggle" type="button" aria-label="Search the site" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-cart-open aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </button>
+      <span id="account-area">
+        <a class="btn small navy" href="login.html">Sign In</a>
+      </span>
+      <a class="btn" href="book.html"><span class="book-full">Book Appointment</span><span class="book-short">Book</span></a>
+      <button class="icon-btn hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="specialists.html">Specialists</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="store.html">Store</a>
+    <a href="academy.html">Academy/Courses</a>
+    <a href="blog.html" class="active" aria-current="page">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login/My Account</a>
+  </nav>
+
+  <!-- Header search — expands a full-width row under the header -->
+  <div class="search-row" id="global-search-row" hidden>
+    <div class="search-row-inner">
+      <div class="search-bar">
+        <input type="search" id="global-search" placeholder="Search services, products, pages&hellip;" aria-label="Search the site" autocomplete="off">
+        <button class="btn outline small" id="search-close" type="button">Close</button>
+      </div>
+      <div class="search-results" id="global-search-results" aria-live="polite"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Shared overlay (drawer + cart) -->
+<div class="overlay" id="overlay" hidden></div>
+
+<!-- Hamburger drawer — slides in from the right -->
+<aside class="drawer" id="nav-drawer" aria-label="Menu" hidden>
+  <div class="drawer-head">
+    <img class="logo-img" src="logo.jpg" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo" width="44" height="44">
+    <span class="drawer-title">Al Kareem<br>Physiotherapy</span>
+    <button class="icon-btn" id="drawer-close" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="specialists.html">Specialists</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="store.html">Store</a>
+    <a href="academy.html">Academy/Courses</a>
+    <a href="blog.html" class="active" aria-current="page">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login/My Account</a>
+  </nav>
+  <div class="drawer-account" data-show-when="logged-out">
+    <a class="btn navy" href="login.html">Sign In</a>
+  </div>
+  <div class="drawer-account" data-show-when="logged-in" hidden>
+    <p style="font-size:14px;color:var(--navy);font-weight:700;">Signed in as <span data-account-name></span> (<span data-account-role></span> demo)</p>
+    <a class="btn navy" href="login.html">My Account</a>
+    <p style="margin-top:10px;"><button class="link-btn" type="button" data-demo-logout>Log out</button></p>
+  </div>
+  <div class="drawer-book">
+    <a class="btn" href="book.html">Book Appointment</a>
+  </div>
+  <div class="drawer-contact">
+    <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
+    Timings: 9:00 AM – 10:00 PM <span class="needed">[NEEDED — confirm]</span><br>
+    Main: Super Chowk, Lodhran &bull; 2nd: Kherror Pakka Road, Lodhran
+  </div>
+</aside>
+
+<!-- Cart drawer — slides in from the right -->
+<aside class="cart-drawer" id="cart-drawer" aria-label="Cart" hidden>
+  <div class="cart-drawer-head">
+    <h2>Your Cart</h2>
+    <button class="icon-btn" id="cart-close" type="button" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cart-drawer-body" id="cart-drawer-body">
+    <!-- Rendered by app.js: cart lines + order summary (subtotal = Rs 850 × qty). -->
+  </div>
+  <div class="cart-drawer-foot" id="cart-drawer-foot" hidden>
+    <button class="btn" id="place-order-demo" type="button">Place order (Demo)</button>
+    <p class="cart-note">Demo — no payment step. Nothing is ordered.</p>
+  </div>
+</aside>
+<!-- ===== HEADER BLOCK — copy ends here ===== -->
+
+<main id="main-content" class="blog-main">
+<div class="blog-column">
+
+    <header>
+      <p class="eyebrow">Blog</p>
+      <h1>Blog &amp; Knowledge Center</h1>
+      <p class="lead">Physiotherapy and rehabilitation information from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran.</p>
+    </header>
+
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured article</h2>
+      <div class="blog-empty">
+        <p>No featured article yet. Articles will appear here once Dr. Muhammad Imran writes or approves them.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="latest-heading">
+      <h2 id="latest-heading">Latest articles</h2>
+      <div class="blog-empty">
+        <p>No articles published yet.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="popular-heading">
+      <h2 id="popular-heading">Popular articles</h2>
+      <div class="blog-empty">
+        <p>No articles published yet.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="categories-heading">
+      <h2 id="categories-heading">Categories</h2>
+      <p class="blog-note">Proposed categories — to confirm with the clinic. <span class="needed">[NEEDED — decision B-D4]</span></p>
+      <ul class="blog-categories">
+        <li><span>Physiotherapy</span><span>0 articles</span></li>
+        <li><span>Pain Management</span><span>0 articles</span></li>
+        <li><span>Sports Injuries</span><span>0 articles</span></li>
+        <li><span>Rehabilitation</span><span>0 articles</span></li>
+        <li><span>Exercise &amp; Fitness</span><span>0 articles</span></li>
+        <li><span>Posture &amp; Mobility</span><span>0 articles</span></li>
+        <li><span>Injury Prevention</span><span>0 articles</span></li>
+        <li><span>Patient Education</span><span>0 articles</span></li>
+        <li><span>Healthcare News</span><span>0 articles</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="search-heading">
+      <h2 id="search-heading">Search articles</h2>
+      <form class="blog-search" action="blog.html" method="get" role="search">
+        <label class="visually-hidden" for="blog-search-input">Search articles</label>
+        <input id="blog-search-input" class="search-input" type="search" name="q" placeholder="Search articles">
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <p class="blog-note search-results">No results — no articles published yet.</p>
+    </section>
+
+    <section aria-labelledby="trending-heading">
+      <h2 id="trending-heading">Trending topics</h2>
+      <div class="blog-empty">
+        <p>No trending topics yet.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="newsletter-heading">
+      <h2 id="newsletter-heading">Newsletter <span class="demo-tag">Demo</span></h2>
+      <p class="blog-note">Demo form only — no subscription is saved.</p>
+      <form id="newsletter-form" class="blog-search newsletter-form" action="blog.html" method="get">
+        <label class="visually-hidden" for="newsletter-email">Email address</label>
+        <input id="newsletter-email" type="email" name="email" placeholder="Your email address" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+      <p class="blog-note newsletter-message">Demo — no subscription saved.</p>
+    </section>
+
+    <section aria-labelledby="editorial-heading">
+      <h2 id="editorial-heading">Editorial standards</h2>
+      <div class="blog-editorial">
+        <p>Every article is written or reviewed by Dr. Muhammad Imran before publication. No article is published without medical review. Articles are educational information, not a substitute for medical advice — see a doctor for diagnosis and treatment.</p>
+      </div>
+      <p class="blog-note">The wording of the formal disclaimer itself is <span class="needed">[NEEDED — wording to approve]</span>.</p>
+    </section>
+
+    <section aria-labelledby="decisions-heading">
+      <h2 id="decisions-heading">Open editorial decisions</h2>
+      <ul>
+        <li>Blog existence — does the blog exist at all? <span class="needed">[NEEDED — decision B-D1]</span></li>
+        <li>Writer — who writes the articles? <span class="needed">[NEEDED — B-D2]</span></li>
+        <li>Medical reviewer — who medically reviews each article before publication? <span class="needed">[NEEDED — B-D3]</span></li>
+        <li>Categories — final category list <span class="needed">[NEEDED — decision B-D4]</span></li>
+        <li>Publishing cadence — how often are articles published, and who keeps it up? <span class="needed">[NEEDED — B-D5]</span></li>
+        <li>Disclaimer wording <span class="needed">[NEEDED — wording to approve — B-D6]</span></li>
+        <li>Article pipeline — topics, drafts, review, publish, update/retire <span class="needed">[NEEDED — B-D7]</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="related-heading">
+      <h2 id="related-heading">Related articles</h2>
+      <div class="blog-empty">
+        <p>No related articles — no articles published yet.</p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+</a>
+
+<div class="sticky-bar">
+  <a class="btn" href="book.html">Book Appointment</a>
+  <a class="btn outline" href="tel:03051974180">Call Clinic</a>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">
+        <img class="logo-img" src="logo.jpg" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo" width="56" height="56">
+        <span class="foot-name">Al Kareem Physiotherapy &amp; Rehabilitation Centre</span>
+      </div>
+      <p>We move you — Heal &bull; Recover &bull; Live Better.<br>Your Health Our Priority. We treat you better.</p>
+      <p class="foot-note">WhatsApp chat uses 0305-1974180 <span class="needed">[NEEDED — confirm WhatsApp number]</span></p>
+    </div>
+    <div>
+      <h3>Our Branches</h3>
+      <p><strong style="color:#fff;">Main Branch</strong><br>City Commercial Center, near Al-Badar Hospital, Super Chowk, Lodhran<br><a href="https://maps.app.goo.gl/nxaP5irQ4XSX9PKx9" target="_blank" rel="noopener">Open in Google Maps &rarr;</a></p>
+      <p><strong style="color:#fff;">2nd Branch</strong><br>Asim Orthopedic &amp; Surgical Hospital, near Mirza Nasir Baig Petrol Pump, Kherror Pakka Road, Lodhran<br><span class="needed">[NEEDED — Maps link]</span></p>
+      <p>Timings: 9:00 AM – 10:00 PM <span class="needed">[NEEDED — confirm]</span><br>Weekly off: <span class="needed">[NEEDED]</span><br>Home care available.</p>
+    </div>
+    <div>
+      <h3>Contact &amp; Quick Links</h3>
+      <ul>
+        <li><a href="tel:03051974180">0305-1974180</a> (Dr. Imran)</li>
+        <li><a href="tel:03008681452">0300-8681452</a> (Muhammad Bilal)</li>
+        <li><a href="tel:03041945896">0304-1945896</a></li>
+        <li><a href="mailto:drimranphysio297@gmail.com">drimranphysio297@gmail.com</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/al_kareem.physio_rehab/" target="_blank" rel="noopener">@al_kareem.physio_rehab</a></li>
+        <li>Facebook: <a href="https://facebook.com/people/Al-Kareem-Medical-Physio-Store/100086538205155/" target="_blank" rel="noopener">Al Kareem Medical &amp; Physio Store</a></li>
+      </ul>
+      <ul style="margin-top:10px;">
+        <li><a href="index.html">Home</a> &bull; <a href="about.html">About</a> &bull; <a href="services.html">Services</a></li>
+        <li><a href="store.html">Store</a> &bull; <a href="academy.html">Academy</a> &bull; <a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a> &bull; <a href="book.html">Book Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">Demo preview — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
+</footer>
+
+
+</body>
+</html>
