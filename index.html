@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Kareem Physiotherapy &amp; Rehabilitation Centre — Lodhran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a2540;
+    --navy-2: #103a5c;
+    --blue: #1b6fb5;
+    --blue-soft: #e8f1fb;
+    --blue-pale: #f2f7fd;
+    --sky: #dbeafe;
+    --ink: #12263a;
+    --muted: #54697e;
+    --line: #d7e3ef;
+    --card: #ffffff;
+    --radius: 16px;
+    --wa: #25d366;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #f4f8fc; color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; padding-bottom: 64px; }
+  h1, h2, h3 { font-weight: 800; line-height: 1.2; letter-spacing: -.015em; color: var(--navy); }
+  a { color: var(--blue); }
+  .needed { display: inline-block; background: #fdecec; color: #a10000; border: 1px dashed #d33; border-radius: 999px; padding: 1px 10px; font-size: 12px; font-weight: 700; }
+  .demo-tag { background: #ffd166; color: #4a3600; font-size: 11px; font-weight: 800; letter-spacing: .06em; padding: 3px 10px; border-radius: 999px; text-transform: uppercase; vertical-align: middle; }
+
+  /* ---------- top strip ---------- */
+  .topbar { background: var(--navy); color: #c8d9ea; font-size: 12.5px; padding: 9px 16px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; }
+  .topbar a { color: #fff; text-decoration: none; font-weight: 700; }
+
+  /* ---------- header (video style) ---------- */
+  header.site { background: #fff; position: sticky; top: 0; z-index: 20; box-shadow: 0 1px 0 var(--line), 0 8px 24px rgba(10,37,64,.08); }
+  .brand-row { max-width: 1100px; margin: 0 auto; padding: 12px 18px 6px; display: flex; align-items: center; gap: 12px; }
+  .brand-row img.logo-img { width: 56px; height: 56px; border-radius: 50%; background: #fff; border: 2px solid var(--blue-soft); flex: none; }
+  .brand-row .name { font-size: 17px; font-weight: 900; line-height: 1.2; color: var(--navy); text-transform: uppercase; letter-spacing: .02em; }
+  .brand-row .name span { color: var(--blue); }
+  .brand-row .sub { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .08em; }
+  .brand-row .head-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .icon-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--line); background: #fff; color: var(--navy); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .icon-btn svg { width: 20px; height: 20px; }
+  .btn { display: inline-block; background: var(--blue); color: #fff; border: none; padding: 12px 22px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background .15s ease, transform .15s ease, box-shadow .15s ease; box-shadow: 0 8px 18px rgba(27,111,181,.28); }
+  .btn:hover { background: var(--navy-2); transform: translateY(-2px); }
+  .btn.navy { background: var(--navy); }
+  .btn.wa-btn { background: var(--wa); color: #fff; box-shadow: 0 8px 18px rgba(37,211,102,.35); }
+  .btn.wa-btn:hover { background: #1eb856; }
+  .btn.outline { background: #fff; color: var(--navy); border: 2px solid var(--navy); box-shadow: none; }
+  .btn.outline:hover { background: var(--blue-soft); }
+  .btn.small { padding: 9px 16px; font-size: 13.5px; }
+  nav.tabs { max-width: 1100px; margin: 0 auto; padding: 2px 18px 11px; display: flex; flex-wrap: wrap; gap: 4px 4px; }
+  nav.tabs button { border: none; background: none; color: var(--navy); padding: 8px 11px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 700; letter-spacing: .02em; transition: all .15s ease; }
+  nav.tabs button:hover { background: var(--blue-soft); color: var(--blue); }
+  nav.tabs button.active { background: var(--navy); color: #fff; }
+  .demo-bar { background: #fff3cd; color: #664d03; text-align: center; padding: 9px 16px; font-size: 13px; border-bottom: 1px solid #ffecb5; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 0 18px 70px; }
+  section { display: none; }
+  section.active { display: block; animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* ---------- hero (video: Expertise You Can Trust) ---------- */
+  .hero { background: linear-gradient(135deg, #eaf3fc 0%, #dbeafe 100%); border-radius: 24px; padding: 38px 28px; margin-top: 22px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 24px; align-items: center; }
+  .hero .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+  .hero h1 { font-size: clamp(30px, 6.5vw, 46px); margin: 10px 0 12px; }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero p.lead { font-size: 16px; color: var(--muted); max-width: 520px; margin-bottom: 20px; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero-photo { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .hero-photo .circle { width: 210px; height: 210px; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 18px 40px rgba(10,37,64,.22); overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+  .hero-photo .circle img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-photo .cap { font-size: 12.5px; color: var(--muted); font-weight: 600; text-align: center; }
+
+  /* trust strip — Dr. Imran */
+  .trust-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .trust-strip .t { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: 13.5px; font-weight: 700; color: var(--navy); flex: 1; min-width: 140px; text-align: center; }
+  .trust-strip .t small { display: block; font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+
+  /* ---------- sections ---------- */
+  .section-head { margin: 46px 0 8px; }
+  .section-head.center { text-align: center; }
+  .section-head .kicker { font-size: 12px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+  .section-head h2 { font-size: clamp(25px, 5vw, 34px); margin: 6px 0 8px; }
+  .section-head p { color: var(--muted); max-width: 640px; }
+  .section-head.center p { margin: 0 auto; }
+  .note { background: var(--blue-soft); border-left: 4px solid var(--blue); padding: 13px 16px; border-radius: 12px; margin: 16px 0; font-size: 14.5px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-top: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(10,37,64,.12); border-color: #b7d3ec; }
+  .card .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--blue-soft); color: var(--blue); display: flex; align-items: center; justify-content: center; margin-bottom: 13px; }
+  .card .icon svg { width: 24px; height: 24px; }
+  .card h3 { font-size: 18px; margin-bottom: 5px; }
+  .card p { font-size: 14.5px; color: var(--muted); }
+  .card .price { font-size: 20px; font-weight: 800; color: var(--navy); margin-top: 10px; }
+  .card .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+  .card .detail { display: none; font-size: 14px; color: var(--muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .card .detail.open { display: block; }
+  .link-btn { background: none; border: none; color: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; padding: 0; margin-top: 10px; }
+  .link-btn:hover { text-decoration: underline; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  .panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .panel h3 { font-size: 19px; margin-bottom: 9px; }
+  .panel p, .panel li { font-size: 14.5px; color: var(--muted); }
+  .panel ul { padding-left: 18px; }
+  .panel li { margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip { background: var(--blue-soft); color: var(--navy); font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 1px solid #d5e6f5; }
+  .chip.active { background: var(--navy); color: #fff; border-color: var(--navy); cursor: pointer; }
+  button.chip { cursor: pointer; font-family: inherit; }
+
+  .photo-box { background: linear-gradient(160deg, #e2edf8, #f6f8fb); color: #5b7a99; border: 2px dashed #9ab8d4; border-radius: var(--radius); min-height: 280px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; font-weight: 800; font-size: 18px; }
+  .cred-list { list-style: none; margin-top: 8px; }
+  .cred-list li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+  .cred-list li:last-child { border-bottom: none; }
+  .cred-list b { color: var(--navy); }
+
+  /* search + categories (Products) */
+  .search-bar { display: flex; gap: 10px; margin-top: 18px; }
+  .search-bar input { flex: 1; padding: 13px 16px; border: 1.5px solid #c4d5e6; border-radius: 11px; font-size: 15px; font-family: inherit; background: #fff; }
+  .search-bar input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,111,181,.14); }
+
+  /* testimonials */
+  .review-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .review-card .stars { color: #f5a623; letter-spacing: 2px; font-size: 15px; }
+  .review-card p { font-size: 14.5px; color: var(--muted); margin: 8px 0; font-style: italic; }
+  .review-card b { font-size: 14px; color: var(--navy); }
+
+  /* FAQ */
+  details.faq { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 10px; }
+  details.faq summary { font-weight: 700; font-size: 15.5px; color: var(--navy); cursor: pointer; }
+  details.faq p { font-size: 14.5px; color: var(--muted); margin-top: 8px; }
+
+  /* maps */
+  .map-frame { width: 100%; height: 220px; border: 0; border-radius: 12px; margin-top: 10px; background: var(--blue-soft); }
+
+  .cta-band { background: var(--navy); color: #fff; border-radius: 22px; padding: 38px 28px; margin-top: 46px; text-align: center; }
+  .cta-band h2 { color: #fff; font-size: clamp(24px, 5vw, 32px); margin-bottom: 8px; }
+  .cta-band p { color: #c4d6e8; max-width: 520px; margin: 0 auto 20px; }
+
+  form.booking { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; margin-top: 18px; box-shadow: 0 14px 30px rgba(10,37,64,.08); }
+  label { display: block; font-weight: 700; font-size: 13.5px; margin: 16px 0 6px; color: var(--navy); }
+  label:first-child { margin-top: 0; }
+  input, select, textarea { width: 100%; padding: 13px 14px; border: 1.5px solid #c4d5e6; border-radius: 11px; font-size: 15px; font-family: inherit; background: #fbfdfc; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,111,181,.14); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14.5px; background: #fff; border-radius: 12px; overflow: hidden; }
+  th, td { border-bottom: 1px solid var(--line); padding: 12px; text-align: left; }
+  th { background: var(--blue-soft); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--navy); }
+
+  /* sign in */
+  .signin-card { max-width: 440px; margin: 22px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px 26px; box-shadow: 0 16px 36px rgba(10,37,64,.1); text-align: center; }
+  .signin-card h2 { font-size: 26px; margin-bottom: 4px; }
+  .signin-card p { color: var(--muted); font-size: 14.5px; margin-bottom: 18px; }
+  .signin-card form { text-align: left; }
+  .google-btn { width: 100%; background: #fff; border: 1.5px solid var(--line); color: var(--ink); padding: 12px; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 12px; font-family: inherit; }
+  .google-btn:hover { background: var(--blue-pale); }
+  .divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12.5px; font-weight: 700; margin: 18px 0 4px; }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  footer { background: var(--navy); color: #c8d9ea; margin-top: 30px; }
+  footer .foot-inner { max-width: 1100px; margin: 0 auto; padding: 34px 18px 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+  footer h3 { color: #fff; font-size: 16px; margin-bottom: 10px; }
+  footer p, footer li { font-size: 13.5px; }
+  footer a { color: #fff; }
+  footer .bottom { text-align: center; font-size: 12.5px; color: #8fa9c2; padding: 0 18px 22px; }
+
+  /* floating WhatsApp + sticky booking bar */
+  .wa-float { position: fixed; right: 16px; bottom: 84px; width: 56px; height: 56px; border-radius: 50%; background: var(--wa); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(37,211,102,.45); z-index: 40; text-decoration: none; }
+  .wa-float svg { width: 30px; height: 30px; }
+  .sticky-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(10,37,64,.12); display: flex; gap: 10px; padding: 10px 14px; }
+  .sticky-bar .btn { flex: 1; text-align: center; padding: 12px 10px; }
+
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; padding: 30px 20px; text-align: center; }
+    .hero .actions { justify-content: center; }
+    .hero-photo .circle { width: 170px; height: 170px; }
+    .brand-row .name { font-size: 14px; }
+    .brand-row .sub { display: none; }
+    .split, .form-grid { grid-template-columns: 1fr; }
+    .photo-box { min-height: 200px; }
+    footer .foot-inner { grid-template-columns: 1fr; }
+    main { padding: 0 14px 56px; }
+    .head-actions .btn { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>Timings: 9:00 AM – 10:00 PM <span style="font-size:11.5px;">(flyer shows "9-10 PM" — confirm)</span></span><span>•</span>
+  <a href="tel:03051974180">0305-1974180</a><span>•</span>
+  <span>Main: Super Chowk, Lodhran &nbsp;|&nbsp; 2nd: Kherror Pakka Road, Lodhran</span>
+</div>
+
+<header class="site">
+  <div class="brand-row">
+    <img class="logo-img" src="data:image/jpeg;base64,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" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo">
+    <div>
+      <div class="name">Al Kareem <span>Physiotherapy</span><br>&amp; Rehabilitation Centre</div>
+      <div class="sub">Lodhran • DPT • MS (MNPT)</div>
+    </div>
+    <div class="head-actions">
+      <button class="icon-btn" title="Cart (Demo)" onclick="alert('Demo only — cart is not live yet.')">🛒</button>
+      <button class="btn small navy" onclick="showTab('signin', document.querySelectorAll('nav.tabs button')[7])">Sign In</button>
+    </div>
+  </div>
+  <nav class="tabs">
+    <button class="active" onclick="showTab('home', this)">Home</button>
+    <button onclick="showTab('about', this)">About Us</button>
+    <button onclick="showTab('products', this)">Products</button>
+    <button onclick="showTab('services', this)">Our Services</button>
+    <button onclick="showTab('booking', this)">Book Appointment</button>
+    <button onclick="showTab('students', this)">Students / LMS</button>
+    <button onclick="showTab('contact', this)">Contact Us</button>
+    <button onclick="showTab('signin', this)">Sign In</button>
+  </nav>
+</header>
+
+<div class="demo-bar"><strong>PROTOTYPE ONLY — Demo preview.</strong> Ye live website nahi hai. Kuch publish, buy ya connect nahi hua.</div>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section id="home" class="active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Al Kareem Physiotherapy &amp; Rehabilitation Centre</div>
+      <h1>Expertise You Can <em>Trust</em></h1>
+      <p class="lead">Back pain, paralysis &amp; orthopedic conditions — evidence-based, individualized physiotherapy care with Dr. Muhammad Imran, in Lodhran.</p>
+      <div class="actions">
+        <button class="btn navy" onclick="showTab('booking', document.querySelectorAll('nav.tabs button')[4])">Book Appointment →</button>
+        <a class="btn wa-btn" href="https://wa.me/923051974180" target="_blank" rel="noopener">Book on WhatsApp</a>
+      </div>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:10px;">WhatsApp button main clinic number (0305-1974180) par jata hai — <span class="needed">[NEEDED — confirm WhatsApp number]</span></p>
+    </div>
+    <div class="hero-photo">
+      <div class="circle"><img src="data:image/jpeg;base64,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" alt="Al Kareem Physiotherapy logo"></div>
+      <div class="cap">Al Kareem Physiotherapy &amp; Rehabilitation Centre — Lodhran<br>Clinic photo: <span class="needed">[NEEDED]</span></div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="t">DPT<small>Dr. Muhammad Imran</small></div>
+    <div class="t">MS (MNPT)<small>Master's Degree</small></div>
+    <div class="t">AHPC Registered<small>REG-20261030-18414</small></div>
+    <div class="t">2 Branches<small>in Lodhran</small></div>
+    <div class="t">Home Care<small>Available</small></div>
+  </div>
+
+  <div class="section-head center">
+    <div class="kicker">Conditions we treat</div>
+    <h2>What hurts? Start here.</h2>
+    <p>Apni takleef choose karein — har condition ke liye ilaaj aur rehab.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Back Pain</h3><p>Back &amp; neck pain, knee &amp; joint therapy. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="showTab('services', document.querySelectorAll('nav.tabs button')[3])">Learn More →</button></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div><h3>Paralysis</h3><p>Paralysis care and rehabilitation. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="showTab('services', document.querySelectorAll('nav.tabs button')[3])">Learn More →</button></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2-1 4-2 5l-2 6h-6l-2-6c-1-1-2-3-2-5a7 7 0 0 1 7-7z"/></svg></div><h3>Stroke / Neuro Rehab</h3><p>Stroke rehab and neurological rehabilitation. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="showTab('services', document.querySelectorAll('nav.tabs button')[3])">Learn More →</button></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13 8l-3 5 2 3v5M13 8l4 2 2 4"/></svg></div><h3>Sports Injury</h3><p>Return to sport, stronger. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="showTab('services', document.querySelectorAll('nav.tabs button')[3])">Learn More →</button></div>
+  </div>
+
+  <div class="section-head">
+    <div class="kicker">Our clinic</div>
+    <h2>Recovery Environment</h2>
+    <p>A calm, clean space made for your recovery — treatment rooms, exercise area and a welcoming waiting room.</p>
+  </div>
+  <div class="photo-box">Clinic waiting-room photo — <span class="needed">[NEEDED — real clinic photos]</span></div>
+
+  <div class="section-head center">
+    <div class="kicker">Patient reviews</div>
+    <h2>What our patients say</h2>
+    <p>Real patient reviews will appear here once shared — no reviews invented.</p>
+  </div>
+  <div class="cards">
+    <div class="review-card"><div class="stars">★★★★★</div><p>Patient review <span class="needed">[NEEDED]</span></p><b>— Patient name <span class="needed">[NEEDED]</span></b></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p>Patient review <span class="needed">[NEEDED]</span></p><b>— Patient name <span class="needed">[NEEDED]</span></b></div>
+    <div class="review-card"><div class="stars">★★★★★</div><p>Patient review <span class="needed">[NEEDED]</span></p><b>— Patient name <span class="needed">[NEEDED]</span></b></div>
+  </div>
+
+  <div class="section-head">
+    <div class="kicker">Good to know</div>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <details class="faq"><summary>What happens on my first visit?</summary><p><span class="needed">[NEEDED — confirm with clinic]</span> — call the clinic at 0305-1974180 and we will guide you.</p></details>
+  <details class="faq"><summary>Do I need a doctor's referral?</summary><p><span class="needed">[NEEDED — confirm with clinic]</span></p></details>
+  <details class="faq"><summary>How long is a session?</summary><p><span class="needed">[NEEDED — confirm with clinic]</span></p></details>
+  <details class="faq"><summary>Do you offer home care?</summary><p>Yes — home care is available, as listed on the clinic's Instagram. Call the clinic to arrange a home visit.</p></details>
+  <details class="faq"><summary>What should I bring to my appointment?</summary><p><span class="needed">[NEEDED — confirm with clinic]</span></p></details>
+
+  <div class="section-head">
+    <div class="kicker">Find us</div>
+    <h2>Our Locations</h2>
+    <p>Two branches in Lodhran.</p>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <h3>Main Branch</h3>
+      <p>City Commercial Center, near Al-Badar Hospital, Super Chowk, Lodhran<br>Timings: 9:00 AM – 10:00 PM <span style="font-size:13px;">(flyer shows "9-10 PM" — please confirm)</span></p>
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=City%20Commercial%20Center%2C%20Super%20Chowk%2C%20Lodhran&output=embed" loading="lazy" title="Main branch map"></iframe>
+      <p style="margin-top:8px;"><a href="https://maps.app.goo.gl/nxaP5irQ4XSX9PKx9" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+    </div>
+    <div class="panel">
+      <h3>Second Branch</h3>
+      <p>Asim Orthopedic &amp; Surgical Hospital, near Mirza Nasir Baig Petrol Pump, Kherror Pakka Road, Lodhran</p>
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=Asim%20Orthopedic%20Hospital%2C%20Kherror%20Pakka%20Road%2C%20Lodhran&output=embed" loading="lazy" title="Second branch map"></iframe>
+      <p style="margin-top:8px;"><a href="https://maps.google.com/maps?q=Asim+Orthopedic+Hospital,+Kherror+Pakka+Road,+Lodhran" target="_blank" rel="noopener">Open in Google Maps →</a> <span style="font-size:12.5px;">(short link: <span class="needed">[NEEDED]</span>)</span></p>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2>Ready to Start Your Recovery?</h2>
+    <p>Book your session today — or message us on WhatsApp and we will find a time that suits you.</p>
+    <button class="btn" onclick="showTab('booking', document.querySelectorAll('nav.tabs button')[4])">Book Appointment →</button>
+    <a class="btn wa-btn" href="https://wa.me/923051974180" target="_blank" rel="noopener" style="margin-left:8px;">WhatsApp Us</a>
+  </div>
+</section>
+
+<!-- ============ ABOUT US (Doctor) ============ -->
+<section id="about">
+  <div class="section-head">
+    <div class="kicker">About Us</div>
+    <h2>Dr. Muhammad Imran</h2>
+    <p>Founder, Al Kareem Physiotherapy and Rehabilitation Centre — Lodhran.</p>
+  </div>
+  <div class="split">
+    <div class="photo-box">Doctor photo — Hasnain will share</div>
+    <div>
+      <div class="panel">
+        <h3>Qualifications</h3>
+        <ul class="cred-list">
+          <li><b>DPT</b> — Doctor of Physical Therapy</li>
+          <li><b>MS (MNPT)</b> — as shown on clinic flyers. One flyer also shows MS (NMPT), TUM and IUB; exact wording to confirm.</li>
+          <li><b>AHPC Reg No.</b> REG-20261030-18414 <span style="font-size:13px;">(shown on a flyer)</span></li>
+          <li><b>Experience:</b> <span class="needed">[NEEDED]</span></li>
+        </ul>
+      </div>
+      <div class="panel" style="margin-top:16px;">
+        <h3>Specialisation</h3>
+        <div class="chips">
+          <span class="chip">Stroke Rehab</span><span class="chip">Neurological Rehab</span><span class="chip">Musculoskeletal Rehab</span><span class="chip">Sports Injury</span><span class="chip">Pediatric / CP Children</span><span class="chip">Geriatric Care</span><span class="chip">Post-Surgery Rehab</span>
+        </div>
+        <p style="margin-top:12px;">Instagram: <a href="https://www.instagram.com/dr_imran_physio" target="_blank" rel="noopener">@dr_imran_physio</a> (founder, per clinic Instagram bio)</p>
+        <p style="margin-top:8px;">Managing Director: Muhammad Bilal — <a href="tel:03008681452">0300-8681452</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="note">Clinic photos: <span class="needed">[NEEDED if any]</span> &nbsp;•&nbsp; Slogans (from clinic flyers): "We move you" — Heal • Recover • Live Better. "Your Health Our Priority."</div>
+</section>
+
+<!-- ============ PRODUCTS (Store) ============ -->
+<section id="products">
+  <div class="section-head">
+    <div class="kicker">A-K Physio Store — Lodhran</div>
+    <h2>Clinic Products</h2>
+    <p>All physiotherapy products under one roof — at the clinic in Lodhran.</p>
+  </div>
+  <div class="search-bar"><input type="text" id="product-search" placeholder="Search products…" oninput="filterProducts()"></div>
+  <div class="chips" id="cat-chips">
+    <button class="chip active" onclick="setCategory('all', this)">All</button>
+    <button class="chip" onclick="setCategory('Exercise & Fitness', this)">Exercise &amp; Fitness</button>
+    <button class="chip" onclick="setCategory('Rehabilitation Equipment', this)">Rehabilitation Equipment</button>
+    <button class="chip" onclick="setCategory('Daily Living Aids', this)">Daily Living Aids</button>
+  </div>
+  <div class="cards" id="product-grid">
+    <div class="card" data-cat="Rehabilitation Equipment" data-name="Shoulder Pulley">
+      <span class="tag">Rehabilitation Equipment • Rs. 850</span>
+      <h3>Shoulder Pulley</h3>
+      <p>Improve your shoulder mobility &amp; regain your strength. Improves range of motion, builds muscle strength, easy to use at home — ideal for physiotherapy.</p>
+      <div class="price">Rs. 850</div>
+      <p style="font-size:12.5px; margin-top:4px;">From Al-Kareem Physio Store Facebook post, 18 Nov 2026. Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Exercise & Fitness" data-name="Product needed">
+      <span class="tag">Exercise &amp; Fitness • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Rehabilitation Equipment" data-name="Product needed">
+      <span class="tag">Rehabilitation Equipment • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Daily Living Aids" data-name="Product needed">
+      <span class="tag">Daily Living Aids • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Exercise & Fitness" data-name="Product needed">
+      <span class="tag">Exercise &amp; Fitness • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Rehabilitation Equipment" data-name="Product needed">
+      <span class="tag">Rehabilitation Equipment • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Daily Living Aids" data-name="Product needed">
+      <span class="tag">Daily Living Aids • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+    <div class="card" data-cat="Exercise & Fitness" data-name="Product needed">
+      <span class="tag">Exercise &amp; Fitness • ILLUSTRATIVE</span>
+      <h3>Product — name/price needed</h3>
+      <p>Name: <span class="needed">[NEEDED]</span><br>Price: <span class="needed">[NEEDED]</span><br>Stock: <span class="needed">[NEEDED]</span></p>
+      <button class="btn outline small" style="margin-top:12px;" onclick="alert('Demo only — no order placed.')">Add to Cart (Demo)</button>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:18px;">
+    <h3>Equipment available at the store</h3>
+    <div class="chips"><span class="chip">TENS Machine</span><span class="chip">Ultrasound Therapy</span><span class="chip">IFT Machine</span><span class="chip">Shockwave Therapy</span><span class="chip">Laser Therapy</span><span class="chip">CPM Machine</span><span class="chip">Traction Machine</span><span class="chip">Hot &amp; Cold Packs</span><span class="chip">Exercise Bands</span><span class="chip">Dumbbells</span><span class="chip">Walking Aids</span><span class="chip">Wheelchairs</span></div>
+    <p style="margin-top:12px;">Prices for these items: <span class="needed">[NEEDED]</span><br>Delivery charges / areas: <span class="needed">[NEEDED]</span><br>Payment method: <span class="needed">[NEEDED]</span> (COD / JazzCash / Easypaisa / card — to confirm)</p>
+  </div>
+</section>
+
+<!-- ============ OUR SERVICES ============ -->
+<section id="services">
+  <div class="section-head">
+    <div class="kicker">Our Services</div>
+    <h2>Services</h2>
+    <p>From the clinic's own flyers. Slogans: "We move you" — Heal • Recover • Live Better. "Your Health Our Priority."</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M13 8l-3 5 2 3v5M13 8l4 2 2 4"/></svg></div><h3>Sports Injury Rehabilitation</h3><p>Return to sport, stronger. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Sports injury assessment, treatment and a graded return-to-sport plan with Dr. Imran.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5 6.5-5s5.7 1.5 6.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 15.5c2.8.3 4.7 1.7 5.5 4.5"/></svg></div><h3>Pediatric Physiotherapy</h3><p>Children's rehabilitation, including CP children therapy. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Gentle, play-based physiotherapy for children, including cerebral palsy care.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div><h3>Geriatric Physiotherapy</h3><p>Strength, balance and mobility for older adults. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Mobility, balance and strength care for older adults — at the clinic or at home.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Manual Therapy &amp; Mobilization</h3><p>Hands-on treatment for joints and muscles. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Hands-on manual therapy and joint mobilization as part of your treatment plan.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Pain Relief</h3><p>Back &amp; neck pain, knee &amp; joint therapy. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Assessment and treatment for back, neck, knee and joint pain.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2-1 4-2 5l-2 6h-6l-2-6c-1-1-2-3-2-5a7 7 0 0 1 7-7z"/></svg></div><h3>Neurological Rehab</h3><p>Stroke rehab and paralysis care. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Rehabilitation after stroke and for neurological conditions, including paralysis care.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Post-Surgery Rehab</h3><p>Guided recovery after surgery. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Step-by-step rehabilitation after surgery, planned with Dr. Imran.</p></div>
+    <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Musculoskeletal Rehab</h3><p>Muscle, bone and joint rehabilitation. Fee: <span class="needed">[NEEDED]</span></p><button class="link-btn" onclick="toggleDetail(this)">Learn More ↓</button><p class="detail">Rehabilitation for musculoskeletal conditions — muscles, bones and joints.</p></div>
+  </div>
+  <p style="margin-top:18px;">Session fee (if shown on site): <span class="needed">[NEEDED]</span></p>
+  <div class="cta-band">
+    <h2>Not sure which treatment you need?</h2>
+    <p>Call the clinic — Dr. Imran will guide you to the right care.</p>
+    <a class="btn" href="tel:03051974180">Call 0305-1974180</a>
+  </div>
+</section>
+
+<!-- ============ BOOK APPOINTMENT ============ -->
+<section id="booking">
+  <div class="section-head">
+    <div class="kicker">Book a session</div>
+    <h2>Book Appointment <span class="demo-tag">Demo only</span></h2>
+    <p>This is a demo form — submitting sends no booking. On the live site, your booking will go straight to the clinic.</p>
+  </div>
+  <form class="booking" onsubmit="demoBooking(event)">
+    <div class="form-grid">
+      <div><label>Your name</label><input type="text" required placeholder="Full name"></div>
+      <div><label>Phone / WhatsApp</label><input type="tel" required placeholder="03XX-XXXXXXX"></div>
+    </div>
+    <div class="form-grid">
+      <div><label>Service</label><select required>
+        <option value="">Choose a service</option>
+        <option>Back Pain</option>
+        <option>Paralysis</option>
+        <option>Stroke / Neuro Rehab</option>
+        <option>Sports Injury Rehabilitation</option>
+        <option>Pediatric Physiotherapy</option>
+        <option>Geriatric Physiotherapy</option>
+        <option>Manual Therapy &amp; Mobilization</option>
+        <option>Post-Surgery Rehab</option>
+      </select></div>
+      <div><label>Date</label><input type="date" required></div>
+    </div>
+    <label>Problem / notes (optional)</label>
+    <textarea rows="3" placeholder="Describe your problem briefly"></textarea>
+    <button class="btn navy" type="submit" style="margin-top:18px; width:100%;">Book Appointment (Demo)</button>
+    <a class="btn wa-btn" href="https://wa.me/923051974180" target="_blank" rel="noopener" style="margin-top:10px; width:100%; text-align:center;">Book on WhatsApp (Demo link)</a>
+    <p id="booking-msg" style="margin-top:12px;font-weight:700;color:var(--blue);"></p>
+    <p style="font-size:12.5px; color:var(--muted); margin-top:8px;">WhatsApp button main clinic number (0305-1974180) par jata hai — <span class="needed">[NEEDED — confirm WhatsApp number]</span></p>
+  </form>
+  <div class="note">Doctor availability / schedule: <span class="needed">[NEEDED]</span> — on the live site you will pick a day and time here. WhatsApp reminders (before the appointment, and a follow-up after 10 / 15 days) come in Phase 3 via WhatsApp Business API — not connected yet.</div>
+  <div class="panel" style="margin-top:16px;">
+    <h3>Prefer to call?</h3>
+    <p>Dr. Muhammad Imran: <a href="tel:03051974180">0305-1974180</a> &nbsp;•&nbsp; Muhammad Bilal: <a href="tel:03008681452">0300-8681452</a></p>
+  </div>
+</section>
+
+<!-- ============ STUDENTS / LMS ============ -->
+<section id="students">
+  <div class="section-head">
+    <div class="kicker">Learn with Dr. Imran</div>
+    <h2>Students / LMS <span class="demo-tag">Demo sample</span></h2>
+    <p>This is a demo student dashboard. The course and assignments below are <strong>samples</strong> — the real course list will be added once Dr. Imran shares it.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><span class="tag">Demo sample</span><h3>My Courses</h3><p>Sample Course — Physiotherapy Basics (DEMO SAMPLE). Progress: —</p></div>
+    <div class="card"><span class="tag">Demo sample</span><h3>Assignments</h3><p>2 sample assignments, both pending. Marks: <span class="needed">[NEEDED]</span></p><button class="btn outline small" style="margin-top:10px;" onclick="alert('Demo only — no assignment submitted.')">Submit Assignment (Demo)</button></div>
+    <div class="card"><span class="tag">How it works</span><h3>Teacher → Student</h3><p>Teacher assigns work, the student submits it, the teacher checks it and updates the marks — all inside the LMS.</p></div>
+  </div>
+  <table>
+    <tr><th>Assignment</th><th>Due date</th><th>Status</th><th>Marks</th></tr>
+    <tr><td>Sample Assignment 1 (DEMO SAMPLE)</td><td><span class="needed">[NEEDED]</span></td><td>Pending</td><td><span class="needed">[NEEDED]</span></td></tr>
+    <tr><td>Sample Assignment 2 (DEMO SAMPLE)</td><td><span class="needed">[NEEDED]</span></td><td>Pending</td><td><span class="needed">[NEEDED]</span></td></tr>
+  </table>
+  <div class="note">Real LMS (WordPress + Tutor LMS): teacher assigns, student submits, teacher checks and updates marks. Course list: <span class="needed">[NEEDED]</span></div>
+</section>
+
+<!-- ============ CONTACT US ============ -->
+<section id="contact">
+  <div class="section-head">
+    <div class="kicker">Get in touch</div>
+    <h2>Contact Us</h2>
+    <p>Two branches in Lodhran — call, WhatsApp, email, or find us on the map.</p>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <h3>Main Branch</h3>
+      <p>City Commercial Center, near Al-Badar Hospital, Super Chowk, Lodhran<br>
+      Timings: 9:00 AM – 10:00 PM <span style="font-size:13px;">(flyer shows "9-10 PM" — please confirm)</span><br>
+      Weekly off: <span class="needed">[NEEDED]</span></p>
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=City%20Commercial%20Center%2C%20Super%20Chowk%2C%20Lodhran&output=embed" loading="lazy" title="Main branch map"></iframe>
+      <p style="margin-top:8px;"><a href="https://maps.app.goo.gl/nxaP5irQ4XSX9PKx9" target="_blank" rel="noopener">Open in Google Maps →</a></p>
+      <h3 style="margin-top:16px;">Second Branch</h3>
+      <p>Asim Orthopedic &amp; Surgical Hospital, near Mirza Nasir Baig Petrol Pump, Kherror Pakka Road, Lodhran</p>
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=Asim%20Orthopedic%20Hospital%2C%20Kherror%20Pakka%20Road%2C%20Lodhran&output=embed" loading="lazy" title="Second branch map"></iframe>
+      <p style="margin-top:8px;"><a href="https://maps.google.com/maps?q=Asim+Orthopedic+Hospital,+Kherror+Pakka+Road,+Lodhran" target="_blank" rel="noopener">Open in Google Maps →</a> <span style="font-size:12.5px;">(short link: <span class="needed">[NEEDED]</span>)</span></p>
+    </div>
+    <div class="panel">
+      <h3>Call, WhatsApp &amp; Email</h3>
+      <p><strong>Phone:</strong> <a href="tel:03051974180">0305-1974180</a> (Dr. Muhammad Imran)<br>
+      <a href="tel:03008681452">0300-8681452</a> (Muhammad Bilal) • 0304-1945896<br>
+      <strong>WhatsApp:</strong> <span class="needed">[NEEDED — confirm which clinic number is WhatsApp]</span><br>
+      <strong>Email:</strong> <a href="mailto:drimranphysio297@gmail.com">drimranphysio297@gmail.com</a></p>
+      <h3 style="margin-top:16px;">Follow the clinic</h3>
+      <p><strong>Facebook:</strong> <a href="https://facebook.com/people/Al-Kareem-Medical-Physio-Store/100086538205155/" target="_blank" rel="noopener">Al Kareem Medical &amp; Physio Store</a><br>
+      <strong>Instagram:</strong> <a href="https://www.instagram.com/al_kareem.physio_rehab" target="_blank" rel="noopener">@al_kareem.physio_rehab</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIGN IN ============ -->
+<section id="signin">
+  <div class="signin-card">
+    <img src="data:image/jpeg;base64,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" alt="Al Kareem logo" style="width:72px;height:72px;border-radius:50%;margin-bottom:10px;">
+    <h2>Welcome back</h2>
+    <p>Sign in to your Al Kareem account — patients and students use the same login.</p>
+    <form onsubmit="demoSignin(event)">
+      <label>Email</label>
+      <input type="email" required placeholder="you@example.com">
+      <label>Password</label>
+      <input type="password" required placeholder="Your password">
+      <button class="btn navy" type="submit" style="width:100%; margin-top:18px;">Sign In (Demo)</button>
+    </form>
+    <div class="divider">OR</div>
+    <button class="google-btn" onclick="alert('Demo only — Google sign-in is not connected yet.')">Continue with Google (Demo)</button>
+    <p id="signin-msg" style="margin-top:14px;font-weight:700;color:var(--blue);"></p>
+    <p style="font-size:12.5px; margin-top:10px;">Demo only — no account is created and nothing is sent. Don't have an account? <span class="needed">[NEEDED — sign-up flow to confirm]</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <h3>Al Kareem Physiotherapy</h3>
+      <p>Al Kareem Physiotherapy and Rehabilitation Centre — Lodhran.<br>"We move you" — Heal • Recover • Live Better.</p>
+    </div>
+    <div>
+      <h3>Branches &amp; Timings</h3>
+      <p><strong>Main:</strong> City Commercial Center, near Al-Badar Hospital, Super Chowk, Lodhran<br>
+      <strong>2nd:</strong> Asim Orthopedic Hospital, Kherror Pakka Road, Lodhran<br>
+      <strong>Timings:</strong> 9:00 AM – 10:00 PM <span style="font-size:12px;">(flyer shows "9-10 PM" — confirm)</span><br>
+      <strong>Weekly off:</strong> <span class="needed">[NEEDED]</span></p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="tel:03051974180">0305-1974180</a> (Dr. Imran)<br>
+      <a href="tel:03008681452">0300-8681452</a> (Muhammad Bilal)<br>
+      <a href="mailto:drimranphysio297@gmail.com">drimranphysio297@gmail.com</a><br>
+      Facebook: Al Kareem Medical &amp; Physio Store<br>
+      Instagram: @al_kareem.physio_rehab</p>
+    </div>
+  </div>
+  <div class="bottom">Prototype (Demo) • Live website nahi hai • WordPress + Kotlin Android app plan ke mutabiq banega<br>Design base: WhatsApp video reference (navy + light blue) + 10 improvements. No Hexovate credit — this is Hasnain / Beatix Studio's prototype.</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" title="Chat on WhatsApp (Demo link — number to confirm)">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88m8.42-18.29A11.82 11.82 0 0 0 12.04 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>
+</a>
+<div class="sticky-bar">
+  <button class="btn navy" onclick="showTab('booking', document.querySelectorAll('nav.tabs button')[4])">Book Appointment</button>
+  <a class="btn outline" href="tel:03051974180">Call Clinic</a>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('main section').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav.tabs button').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function demoBooking(e) {
+  e.preventDefault();
+  document.getElementById('booking-msg').textContent = 'Demo only — no booking sent. Live site par yahan se asli booking hogi.';
+}
+function demoSignin(e) {
+  e.preventDefault();
+  document.getElementById('signin-msg').textContent = 'Demo only — no sign-in happened. Live site par yahan se asli login hoga.';
+}
+function toggleDetail(btn) {
+  var d = btn.parentElement.querySelector('.detail');
+  if (d) { d.classList.toggle('open'); btn.textContent = d.classList.contains('open') ? 'Show Less ↑' : 'Learn More ↓'; }
+}
+var currentCategory = 'all';
+function setCategory(cat, btn) {
+  currentCategory = cat;
+  document.querySelectorAll('#cat-chips .chip').forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  filterProducts();
+}
+function filterProducts() {
+  var q = (document.getElementById('product-search').value || '').toLowerCase();
+  document.querySelectorAll('#product-grid .card').forEach(function(card){
+    var name = (card.getAttribute('data-name') || '').toLowerCase();
+    var cat = card.getAttribute('data-cat') || '';
+    var ok = (currentCategory === 'all' || cat === currentCategory) && (!q || name.indexOf(q) !== -1 || card.textContent.toLowerCase().indexOf(q) !== -1);
+    card.style.display = ok ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
