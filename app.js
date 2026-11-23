@@ -42,7 +42,7 @@
   var SESSION_KEY = 'ak_demo_session';
   var BOOKING_SEQ_KEY = 'ak_demo_booking_seq';
 
-  /* ---------- The ONLY product (verified: Shoulder Pulley, Rs 850) ---------- */
+  /* ---------- Products (verified from the clinic's Facebook Store page, Nov 2026; only Shoulder Pulley is priced, Rs 850) ---------- */
   var PRODUCTS = {
     'shoulder-pulley': { id: 'shoulder-pulley', name: 'Shoulder Pulley', price: 850 }
   };
@@ -82,7 +82,7 @@
   }
 
   /* ========================================================================
-     (a) CART — localStorage. One real product only.
+     (a) CART — localStorage. Seven real products; only Shoulder Pulley is priced (Rs 850).
      ======================================================================== */
   function getCart() {
     var cart = readJSON(CART_KEY, []);
@@ -136,7 +136,7 @@
     body.innerHTML = '';
     var cart = getCart();
     if (cart.length === 0) {
-      var empty = el('p', 'cart-empty', 'Your cart is empty. The store has one real product: Shoulder Pulley — Rs 850.');
+      var empty = el('p', 'cart-empty', 'Your cart is empty. The store has seven real products; only the Shoulder Pulley is priced (Rs 850).');
       body.appendChild(empty);
       var foot = $('#cart-drawer-foot');
       if (foot) foot.hidden = true;
@@ -182,10 +182,7 @@
     row1.appendChild(el('span', null, money(subtotal)));
     var row2 = el('div', 'cart-summary-row');
     row2.appendChild(el('span', null, 'Delivery'));
-    var del = el('span', null, '');
-    del.appendChild(document.createTextNode('Delivery charges '));
-    var need = el('span', 'needed', '[NEEDED]');
-    del.appendChild(need);
+    var del = el('span', null, 'Free home delivery within Lodhran City');
     row2.appendChild(del);
     var row3 = el('div', 'cart-summary-row total');
     row3.appendChild(el('span', null, 'Total'));
@@ -292,8 +289,14 @@
     { type: 'Service', label: 'Geriatric Care', href: 'services.html' },
     { type: 'Service', label: 'Pediatric Rehab', href: 'services.html' },
     { type: 'Service', label: 'Musculoskeletal Rehab', href: 'services.html' },
-    /* 1 real product */
+    /* 7 real products (Facebook Store page, Nov 2026) */
     { type: 'Product', label: 'Shoulder Pulley \u2014 Rs 850', href: 'store.html' },
+    { type: 'Product', label: 'Walking Walker', href: 'store.html' },
+    { type: 'Product', label: 'Massage Gun / Fascia Gun', href: 'store.html' },
+    { type: 'Product', label: 'Digital Thermometer', href: 'store.html' },
+    { type: 'Product', label: 'ATOM King Size Heating Pad', href: 'store.html' },
+    { type: 'Product', label: 'Care Vision 3-in-1 Combo TENS Machine', href: 'store.html' },
+    { type: 'Product', label: 'Blood Pressure Monitors', href: 'store.html' },
     /* Pages */
     { type: 'Page', label: 'Home', href: 'index.html' },
     { type: 'Page', label: 'About \u2014 Dr. Muhammad Imran', href: 'about.html' },
@@ -600,7 +603,8 @@
   }
 
   /* ========================================================================
-     Store page: product search + category chips (real product only)
+     Store page: product search + category chips (seven real products; the page's
+     own inline script owns filtering — this only keeps chip state consistent)
      ======================================================================== */
   function initStoreFilters() {
     var input = $('#product-search');
@@ -617,9 +621,9 @@
         if (none) none.hidden = visible !== 0;
       });
     }
-    $all('[data-category]').forEach(function (chip) {
+    $all('.cat-chips [data-category]').forEach(function (chip) {
       chip.addEventListener('click', function () {
-        $all('[data-category]').forEach(function (c) { c.classList.remove('active'); });
+        $all('.cat-chips [data-category]').forEach(function (c) { c.classList.remove('active'); });
         chip.classList.add('active');
         var cat = chip.getAttribute('data-category');
         var gridEl = $('#product-grid');

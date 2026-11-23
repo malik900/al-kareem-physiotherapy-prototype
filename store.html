@@ -19,9 +19,8 @@
   .search-bar input:focus { outline: none; border-color: #1b6fb5; box-shadow: 0 0 0 3px rgba(27,111,181,.14); }
   .cat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-top: 18px; }
-  .product-card .price { font-size: 20px; font-weight: 800; color: #0a2540; margin: 10px 0 4px; }
-  .product-card .stock { font-size: 14.5px; color: #54697e; margin: 0 0 14px; }
-  .product-card .photo-box { display: flex; align-items: center; justify-content: center; min-height: 200px; background: linear-gradient(#e2edf8, #f6f8fb); border: 1px dashed #9ab8d4; border-radius: 12px; color: #5b7a99; font-size: 18px; font-weight: 800; text-align: center; margin-bottom: 16px; }
+  .product-card .price { font-size: 20px; font-weight: 800; color: #0a2540; margin: 10px 0 14px; }
+  .product-card .source-note { font-size: 13.5px; color: #54697e; margin: 8px 0 0; }
   .product-card .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .empty-state { background: #fff; border: 1px solid #d7e3ef; border-radius: 16px; padding: 22px; margin-top: 18px; color: #54697e; font-size: 14.5px; line-height: 1.6; }
   .equipment-list { list-style: none; margin: 12px 0 0; padding: 0; columns: 2; column-gap: 24px; }
@@ -42,7 +41,7 @@
 <div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
 
 <div class="topbar">
-  <span>Timings: 9:00 AM – 10:00 PM (flyer shows &ldquo;9-10 PM&rdquo; — confirm)</span>
+  <span>Timings: 10:00 AM – 10:00 PM</span>
   <span aria-hidden="true">&bull;</span>
   <a href="tel:03051974180">0305-1974180</a>
   <span aria-hidden="true">&bull;</span>
@@ -54,7 +53,7 @@
     <a class="brand-link" href="index.html">
       <img class="logo-img" src="logo.jpg" alt="Al Kareem Physiotherapy and Rehabilitation Centre logo" width="56" height="56">
       <span>
-        <span class="name">Al Kareem <span>Physiotherapy</span><br>&amp; Rehabilitation Centre</span>
+        <span class="name">Al Kareem <span>Physiotherapy</span> <br>&amp; Rehabilitation Centre</span>
         <span class="sub">Lodhran &bull; DPT (IUB) &bull; MS NMPT (TUM)</span>
       </span>
     </a>
@@ -138,7 +137,7 @@
   </div>
   <div class="drawer-contact">
     <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
-    Timings: 9:00 AM – 10:00 PM <span class="needed">[NEEDED — confirm]</span><br>
+    Timings: 10:00 AM – 10:00 PM<br>
     Main: Super Chowk, Lodhran
   </div>
 </aside>
@@ -171,67 +170,111 @@
       <input type="search" id="store-search" placeholder="Search products…" aria-label="Search products">
     </div>
     <div class="cat-chips" role="group" aria-label="Product categories">
-      <button class="chip" type="button" data-category="all">All Products</button>
-      <button class="chip" type="button" data-category="exercise-fitness">Exercise &amp; Fitness</button>
-      <button class="chip active" type="button" data-category="rehabilitation-equipment" aria-pressed="true">Rehabilitation Equipment</button>
-      <button class="chip" type="button" data-category="daily-living-aids">Daily Living Aids</button>
+      <button class="chip active" type="button" data-category="all" aria-pressed="true">All Products</button>
+      <button class="chip" type="button" data-category="heating-pads">Heating Pads</button>
+      <button class="chip" type="button" data-category="rehabilitation-equipment">Physiotherapy / Rehabilitation Equipment</button>
+      <button class="chip" type="button" data-category="exercise-fitness">Exercise &amp; Fitness Accessories</button>
+      <button class="chip" type="button" data-category="pain-management">Pain Management Products</button>
+      <button class="chip" type="button" data-category="medical-support">Medical Support &amp; Braces</button>
+      <button class="chip" type="button" data-category="patient-care">Patient Care Equipment</button>
     </div>
-    <p class="confirm-note">Categories are reference-derived, not clinic-confirmed — confirm with the clinic.</p>
+    <p class="confirm-note">Categories as listed on the clinic&rsquo;s Facebook Store page.</p>
   </section>
 
   <section aria-label="Products">
-    <div class="cat-panel" id="cat-rehabilitation-equipment">
-      <div class="product-grid">
-        <article class="card product-card" data-category="rehabilitation-equipment">
-          <a href="product-shoulder-pulley.html" aria-label="Shoulder Pulley — view details">
-            <div class="photo-box">Photo [NEEDED]</div>
-          </a>
-          <span class="tag">Rehabilitation Equipment</span>
-          <h3><a href="product-shoulder-pulley.html">Shoulder Pulley</a></h3>
-          <p>Improve your shoulder mobility &amp; regain your strength. Improves range of motion, builds muscle strength, easy to use at home — ideal for physiotherapy.</p>
-          <p class="confirm-note">Description to confirm final wording with clinic. Category assignment TO CONFIRM.</p>
-          <p class="price">Rs 850</p>
-          <p class="stock">Stock: [NEEDED]</p>
-          <div class="card-actions">
-            <button class="btn outline add-to-cart" type="button" data-add-to-cart="shoulder-pulley" data-product="shoulder-pulley" data-name="Shoulder Pulley" data-price="850">Add to Cart</button>
-            <a class="link-btn" href="product-shoulder-pulley.html">View details →</a>
-          </div>
-        </article>
-      </div>
+    <div class="product-grid" id="product-grid">
+      <article class="card product-card" data-category="rehabilitation-equipment">
+        <span class="tag">Physiotherapy / Rehabilitation Equipment</span>
+        <h3><a href="product-shoulder-pulley.html">Shoulder Pulley Exercise Device</a></h3>
+        <p>Door-mounted pulley by Fitness Box. Shoulder mobility and rehab, frozen shoulder, post-injury recovery, rotator cuff strengthening and pain relief.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store post, 18 Nov 2026. Free home delivery.</p>
+        <p class="price">Rs 850</p>
+        <div class="card-actions">
+          <button class="btn outline add-to-cart" type="button" data-add-to-cart="shoulder-pulley" data-product="shoulder-pulley" data-name="Shoulder Pulley" data-price="850">Add to Cart</button>
+          <a class="link-btn" href="product-shoulder-pulley.html">View details →</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="patient-care">
+        <span class="tag">Patient Care Equipment</span>
+        <h3>Adjustable Aluminum Folding Walking Walker</h3>
+        <p>Lightweight, foldable walker with adjustable height — for elderly users, post-surgery recovery, injury or weakness, and balance support.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="pain-management">
+        <span class="tag">Pain Management Products</span>
+        <h3>Massage Gun / Fascia Gun</h3>
+        <p>Deep-tissue massage for muscle recovery, pain relief and stiffness.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="patient-care">
+        <span class="tag">Patient Care Equipment</span>
+        <h3>Digital Thermometer</h3>
+        <p>LifeChek TD-7000 / BestLife BN-BDT101. Fast, accurate temperature reading and fever monitoring.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="heating-pads">
+        <span class="tag">Heating Pads</span>
+        <h3>ATOM King Size Heating Pad</h3>
+        <p>King-size heating pad for pain relief, muscle stiffness, back and joint pain, cramps and cold weather.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store post, 16 Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="rehabilitation-equipment">
+        <span class="tag">Physiotherapy / Rehabilitation Equipment</span>
+        <h3>Care Vision 3-in-1 Combo TENS Machine</h3>
+        <p>TENS + EMS + Massage modes — for back, neck and shoulder pain, joint pain, muscle stiffness, sports injuries and post-surgery recovery. Free home delivery.</p>
+        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
+      <article class="card product-card" data-category="patient-care">
+        <span class="tag">Patient Care Equipment</span>
+        <h3>Blood Pressure Monitors</h3>
+        <p>Digital blood pressure monitors — CERTEZA, Medico and UCheck. Shown in photos on the clinic&rsquo;s Facebook Store page.</p>
+        <p class="source-note">Seen in photos attached to the clinic&rsquo;s Facebook Store post, 17 Nov 2026.</p>
+        <p class="price">Price on WhatsApp</p>
+        <div class="card-actions">
+          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
+        </div>
+      </article>
     </div>
-
-    <div class="cat-panel" id="cat-exercise-fitness" hidden>
-      <div class="empty-state">No products in this category yet.</div>
-    </div>
-
-    <div class="cat-panel" id="cat-daily-living-aids" hidden>
-      <div class="empty-state">No products in this category yet.</div>
-    </div>
+    <div class="empty-state" id="product-no-results" hidden>No products match that search or category.</div>
   </section>
 
-  <p class="coming-soon">More products coming soon — full product list [NEEDED] from the clinic.</p>
+  <p class="coming-soon">More products are added as the clinic lists them — ask on WhatsApp for anything not shown here.</p>
 
   <section aria-labelledby="equipment-heading">
     <div class="section-head">
-      <h2 id="equipment-heading">Clinic Equipment</h2>
-      <p>Equipment available at the clinic, named on clinic flyers. These are shown for information only.</p>
+      <h2 id="equipment-heading">What the store stocks</h2>
+      <p>Categories as listed on the clinic&rsquo;s Facebook Store page.</p>
     </div>
     <div class="panel">
       <ul class="equipment-list">
-        <li>TENS Machine</li>
-        <li>Ultrasound Therapy Machine</li>
-        <li>IFT Machine</li>
-        <li>Shockwave Therapy</li>
-        <li>Laser Therapy</li>
-        <li>CPM Machine</li>
-        <li>Traction Machine</li>
-        <li>Hot &amp; Cold Packs</li>
-        <li>Exercise Bands</li>
-        <li>Dumbbells</li>
-        <li>Walking Aids</li>
-        <li>Wheelchairs</li>
+        <li>Heating Pads</li>
+        <li>Physiotherapy / Rehabilitation Equipment</li>
+        <li>Exercise &amp; Fitness Accessories</li>
+        <li>Pain Management Products</li>
+        <li>Medical Support &amp; Braces</li>
+        <li>Patient Care Equipment</li>
       </ul>
-      <p class="note">Named on clinic flyers — prices [NEEDED]; per-item decision pending: sold online or display-only. None of these is a buyable product yet.</p>
+      <p class="note">Seven products are listed above, each from the clinic&rsquo;s own Facebook Store posts (Nov 2026). Only the Shoulder Pulley carries a stated price. Ask on WhatsApp for anything not shown here.</p>
     </div>
   </section>
 
@@ -239,7 +282,7 @@
     <div class="section-head">
       <h2 id="delivery-heading">Delivery</h2>
     </div>
-    <p class="note">Delivery charges/areas: [NEEDED].</p>
+    <p class="note">Free home delivery within Lodhran City.</p>
   </section>
 
   <section aria-labelledby="reviews-heading">
@@ -271,15 +314,15 @@
     </div>
     <div>
       <h3>Visit Us</h3>
-      <p><strong style="color:#fff;">Our Clinic</strong><br>city commercial center opposite Educators school near Al badar hospital khanewal road super chock lodhran, Lodhran, Pakistan, 59320<br><a href="https://maps.app.goo.gl/nxaP5irQ4XSX9PKx9" target="_blank" rel="noopener">Open in Google Maps &rarr;</a></p>
-      <p>Timings: 9:00 AM – 10:00 PM <span class="needed">[NEEDED — confirm]</span><br>Weekly off: <span class="needed">[NEEDED]</span><br>Home care available.</p>
+      <p><strong style="color:#fff;">Our Clinic</strong><br>city commercial center opposite Educators school near Al badar hospital khanewal road super chock lodhran, Lodhran, Pakistan, 59320<br><a href="https://www.google.com/maps/dir/29.5260109,71.6148191/Al-Kareem+Physiotherapy+and+Rehabilitation,+City+Commercial+Center,+Super+Chowk,+near+Al-Badr+Orthopedic+Hospital,+Lodhr%C4%81n,+59320,+Pakistan/@29.3739324,71.7503853,15952m/data=!3m2!1e3!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x393b9f002cf3f8af:0xa4c2ab6760b48bb6!2m2!1d71.6392052!2d29.519655!3e9?entry=ttu&amp;g_ep=EgoyMDI2MTExOC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Get Directions &rarr;</a></p>
+      <p>Timings: 10:00 AM – 10:00 PM<br>Open 7 days a week — no weekly off<br>Home care available.</p>
     </div>
     <div>
       <h3>Contact &amp; Quick Links</h3>
       <ul>
         <li><a href="tel:03051974180">0305-1974180</a> (Dr. Imran)</li>
         <li><a href="tel:03008681452">0300-8681452</a> (Muhammad Bilal)</li>
-        <li><a href="tel:03041945896">0304-1945896</a></li>
+        <li><a href="tel:03081945896">0308-1945896 (Muhammad Iqbal)</a></li>
         <li><a href="mailto:drimranphysio297@gmail.com">drimranphysio297@gmail.com</a></li>
         <li>Instagram: <a href="https://www.instagram.com/al_kareem.physio_rehab/" target="_blank" rel="noopener">@al_kareem.physio_rehab</a></li>
         <li>Facebook: <a href="https://facebook.com/people/Al-Kareem-Medical-Physio-Store/100086538205155/" target="_blank" rel="noopener">Al Kareem Medical &amp; Physio Store</a></li>
@@ -295,33 +338,38 @@
 </footer>
 
 <script>
-  // Store-only category filter (shared app.js owns search toggle, drawer and cart).
+  // Store-only category filter + search (shared app.js owns search toggle, drawer and cart).
   (function () {
     var chips = document.querySelectorAll('.cat-chips .chip');
-    var panels = {
-      'exercise-fitness': document.getElementById('cat-exercise-fitness'),
-      'rehabilitation-equipment': document.getElementById('cat-rehabilitation-equipment'),
-      'daily-living-aids': document.getElementById('cat-daily-living-aids')
-    };
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.product-card'));
+    var none = document.getElementById('product-no-results');
+    var activeCat = 'all';
+    var query = '';
+    function applyFilter() {
+      var visible = 0;
+      cards.forEach(function (card) {
+        var okCat = activeCat === 'all' || card.getAttribute('data-category') === activeCat;
+        var okQ = !query || card.textContent.toLowerCase().indexOf(query) !== -1;
+        var show = okCat && okQ;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (none) none.hidden = visible !== 0;
+    }
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
         chips.forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
         chip.classList.add('active');
         chip.setAttribute('aria-pressed', 'true');
-        var cat = chip.getAttribute('data-category');
-        Object.keys(panels).forEach(function (key) {
-          if (panels[key]) panels[key].hidden = (cat !== 'all' && key !== cat);
-        });
+        activeCat = chip.getAttribute('data-category');
+        applyFilter();
       });
     });
     var search = document.getElementById('store-search');
     if (search) {
       search.addEventListener('input', function () {
-        var q = search.value.trim().toLowerCase();
-        var card = document.querySelector('.product-card');
-        if (!card) return;
-        var match = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
-        card.style.display = match ? '' : 'none';
+        query = search.value.trim().toLowerCase();
+        applyFilter();
       });
     }
   })();

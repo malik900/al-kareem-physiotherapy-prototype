@@ -115,7 +115,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 18px 70px; }
 .lead { font-size: 16px; color: var(--muted); max-width: 520px; }
 
 /* ---------- Badges ---------- */
-/* [NEEDED] — build-time marker only, must never appear on the live site */
+/* Placeholder badge — retired: no placeholder text may appear on the live site. */
 .needed {
   display: inline-block; background: var(--needed-bg); color: var(--needed-text);
   border: 1px dashed var(--needed-border); border-radius: 999px;
@@ -154,6 +154,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 18px 70px; }
 .btn.block { width: 100%; }
 .btn:disabled, .btn[disabled] { opacity: .45; box-shadow: none; cursor: not-allowed; transform: none; }
 .btn .book-short { display: none; }
+
+.btn:focus-visible, .link-btn:focus-visible, nav.main-nav a:focus-visible, .icon-btn:focus-visible {
+  outline: 3px solid rgba(27, 111, 181, .45); outline-offset: 2px;
+}
 
 /* Ghost / text link */
 .link-btn {
@@ -198,13 +202,14 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 18px 70px; }
 /* ---------- 4. Demo bar / topbar / header / nav (§3.12, §4) ---------- */
 .demo-bar {
   background: var(--demo-bar-bg); color: var(--demo-bar-text);
-  text-align: center; padding: 9px 16px; font-size: 13px;
+  text-align: center; padding: 8px 16px; font-size: 13px; font-weight: 600;
+  letter-spacing: .01em;
   border-bottom: 1px solid var(--demo-bar-border);
 }
 .topbar {
   background: var(--navy); color: var(--on-navy); font-size: 12.5px;
-  padding: 9px 16px; display: flex; flex-wrap: wrap; gap: 6px 18px;
-  justify-content: center; text-align: center;
+  padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 6px 18px;
+  justify-content: center; text-align: center; letter-spacing: .02em;
 }
 .topbar a { color: #fff; text-decoration: none; font-weight: 700; }
 .topbar a:hover { text-decoration: underline; }
@@ -212,9 +217,10 @@ main { max-width: 1100px; margin: 0 auto; padding: 0 18px 70px; }
 header.site {
   background: #fff; position: sticky; top: 0; z-index: 20;
   box-shadow: var(--shadow-header);
+  border-bottom: 1px solid var(--line);
 }
 .brand-row {
-  max-width: 1100px; margin: 0 auto; padding: 12px 18px 6px;
+  max-width: 1100px; margin: 0 auto; padding: 10px 18px 8px;
   display: flex; align-items: center; gap: 12px;
 }
 .brand-row a.brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
@@ -269,7 +275,7 @@ img.logo-img {
 .account-panel .role-group { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 8px 14px 2px; }
 
 /* Nav row — 11 items; Book Appointment is a BUTTON, never a nav link */
-nav.main-nav { max-width: 1100px; margin: 0 auto; padding: 2px 18px 11px; display: flex; flex-wrap: wrap; gap: 4px; }
+nav.main-nav { max-width: 1100px; margin: 0 auto; padding: 6px 18px 10px; display: flex; flex-wrap: wrap; gap: 4px; border-top: 1px solid #eef4fa; }
 nav.main-nav a {
   border: none; background: none; color: var(--navy);
   padding: 8px 11px; border-radius: 8px; cursor: pointer;
@@ -394,13 +400,22 @@ nav.main-nav a.active { background: var(--navy); color: #fff; }
 /* ---------- 7. Hero (§3.13) ---------- */
 .hero {
   background: linear-gradient(135deg, var(--hero-1) 0%, var(--sky) 100%);
-  border-radius: 24px; padding: 38px 28px; margin-top: 22px;
-  display: grid; grid-template-columns: 1.25fr .75fr; gap: 24px; align-items: center;
+  border-radius: 24px; padding: 44px 32px; margin-top: 22px;
+  display: grid; grid-template-columns: 1.25fr .75fr; gap: 28px; align-items: center;
 }
-.hero h1 { margin: 10px 0 12px; }
+.hero h1 { margin: 10px 0 12px; font-size: clamp(32px, 5vw, 48px); line-height: 1.08; letter-spacing: -.02em; }
 .hero h1 em { font-style: normal; color: var(--blue); }
-.hero p.lead { margin-bottom: 20px; }
-.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero p.lead { margin-bottom: 20px; font-size: 17px; max-width: 560px; }
+.hero .actions, .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .wa-note { margin-top: 14px; font-size: 13.5px; }
+/* Hero media — real clinic street photo (portrait source, cropped to a card) */
+.hero-media { margin: 0; }
+.hero-media img {
+  width: 100%; height: 340px; object-fit: cover; object-position: center 30%;
+  border-radius: 16px; border: 1px solid var(--line); display: block;
+  box-shadow: var(--shadow-hero-circle); background: #fff;
+}
+.hero-media figcaption { font-size: 12.5px; color: var(--muted); font-weight: 600; text-align: center; margin-top: 10px; line-height: 1.5; }
 .hero-photo { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .hero-photo .circle {
   width: 210px; height: 210px; border-radius: 50%; border: 6px solid #fff;
@@ -470,7 +485,7 @@ button.chip { cursor: pointer; font-family: inherit; }
 .cred-list li:last-child { border-bottom: none; }
 .cred-list b { color: var(--navy); }
 
-/* Photo placeholder — ONLY where a real photo is still [NEEDED] */
+/* Photo placeholder box — used only where no photo exists yet; never presented as a real clinic photo. */
 .photo-box {
   background: linear-gradient(160deg, var(--photo-grad-1), var(--photo-grad-2));
   color: var(--photo-text); border: 2px dashed var(--photo-border);
@@ -478,6 +493,15 @@ button.chip { cursor: pointer; font-family: inherit; }
   display: flex; align-items: center; justify-content: center; text-align: center;
   padding: 24px; font-weight: 800; font-size: 18px;
 }
+
+/* Map embed (Contact + home Visit Us) */
+.map-frame { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); margin: 14px 0; }
+.map-frame iframe { width: 100%; height: 320px; border: 0; display: block; }
+
+/* Reviews fallback — links out to the clinic's Facebook page; no review is invented */
+.reviews-fallback h3 { font-size: 19px; margin-bottom: 9px; }
+.reviews-fallback p { font-size: 14.5px; color: var(--muted); }
+.reviews-fallback .btn { margin-top: 6px; }
 
 /* Note callout */
 .note {
@@ -703,7 +727,17 @@ body[data-page="book"] .wa-float { bottom: 16px; }
   .container, main { padding-left: 14px; padding-right: 14px; }
   main { padding-bottom: 56px; }
 
-  /* Header collapses: logo + name + search/cart/Book/hamburger */
+  /* Header collapses: logo + name + search/cart/Book/hamburger.
+     FIX (24 Nov verification): the brand link shrank below its content width,
+     so the name text slid underneath the search/cart buttons on phones.
+     Brand now takes the full first row (name wraps to 2 lines, no overlap),
+     actions sit on the second row, right-aligned. */
+  .brand-row { flex-wrap: wrap; gap: 8px; padding-left: 12px; padding-right: 12px; }
+  .brand-row a.brand-link { gap: 8px; flex: 1 1 100%; }
+  .brand-row a.brand-link > span { min-width: 0; line-height: 1.25; }
+  .brand-row .name br { display: none; }
+  .brand-row img.logo-img { width: 44px; height: 44px; }
+  .brand-row .head-actions { gap: 6px; }
   .brand-row .name { font-size: 14px; }
   .brand-row .sub { display: none; }
   .brand-row .head-actions .btn.navy { display: none; } /* Sign In moves into the drawer */
@@ -716,7 +750,8 @@ body[data-page="book"] .wa-float { bottom: 16px; }
   .sticky-bar { display: flex; }
 
   .hero { grid-template-columns: 1fr; padding: 30px 20px; text-align: center; }
-  .hero .actions { justify-content: center; }
+  .hero .actions, .hero-actions { justify-content: center; }
+  .hero-media img { height: 260px; }
   .hero-photo .circle { width: 170px; height: 170px; }
   .split, .form-grid { grid-template-columns: 1fr; }
   .photo-box { min-height: 200px; }
