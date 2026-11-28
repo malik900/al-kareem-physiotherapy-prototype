@@ -521,6 +521,28 @@
     if (err) { err.textContent = ''; err.hidden = true; }
   }
 
+  /* ---------- Scroll reveal (v2a): subtle fade-up for sections, panels
+     and cards as they enter the viewport. Transform/opacity only.
+     The .reveal class is added by JS, so no-JS never hides content.
+     Reduced-motion is handled in CSS (reveal forced visible). ---------- */
+  function initScrollReveal() {
+    var els = $all('main section:not(.hero), main .panel, main .card');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+
   function initBookingForm() {
     var form = $('#booking-form');
     if (!form) return;
@@ -646,6 +668,7 @@
 
   /* ---------- Wire everything up ---------- */
   document.addEventListener('DOMContentLoaded', function () {
+    initScrollReveal();
     updateCartBadges();
     renderCartDrawer();
     renderAccountArea();

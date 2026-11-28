@@ -1054,3 +1054,91 @@ tbody tr:hover { background: var(--bg-warm); }
   .admin-main td { overflow-wrap: break-word; }
   .admin-main .status-pill { padding: 3px 8px; }
 }
+
+/* ==========================================================================
+   17. Motion (v2a) — smooth transitions, scroll reveal, hero entrance.
+   Subtle and professional: short easings, transform/opacity only.
+   Nothing here changes layout, text, colours, or any verified fact.
+   ========================================================================== */
+
+/* --- Smooth transitions on interactive elements --- */
+a { transition: color .18s ease; }
+nav.main-nav a { transition: background .18s ease, color .18s ease; }
+.drawer nav.drawer-nav a { transition: background .18s ease, color .18s ease; }
+.topbar a { transition: color .18s ease; }
+footer a, .foot-inner a { transition: color .18s ease; }
+.icon-btn { transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.icon-btn:hover { transform: translateY(-1px); }
+.chip { transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease; }
+.chip:hover { transform: translateY(-1px); }
+.cat-chips [data-category] { transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease; }
+.cat-chips [data-category]:hover { transform: translateY(-1px); }
+.qty-btn, .cart-item-remove, .link-btn { transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease; }
+details.faq summary { transition: background .18s ease, color .18s ease; }
+input, select, textarea { transition: border-color .18s ease, box-shadow .18s ease; }
+
+/* --- Social icons (icon-only links, v2a) --- */
+.social-icons { display: flex; gap: 10px; align-items: center; padding: 2px 0; }
+.social-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex: none; border-radius: 50%;
+  background: var(--blue-soft); border: 1px solid var(--line);
+  color: var(--navy); text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+}
+.social-icon:hover {
+  background: var(--navy); border-color: var(--navy); color: #fff;
+  text-decoration: none; transform: translateY(-2px);
+}
+.social-icon svg { width: 22px; height: 22px; display: block; }
+/* Dark-background variant (footer, on navy). */
+footer .social-icon {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .28);
+  color: #fff;
+}
+footer .social-icon:hover { background: var(--blue); border-color: var(--blue); }
+
+/* --- Scroll reveal (JS adds .reveal, IntersectionObserver adds .visible) --- */
+.reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Cards reveal by opacity only, so the existing card hover-lift
+   (transform .15s) and its transition are never disturbed. */
+.card.reveal {
+  opacity: 0; transform: none;
+  transition: opacity .6s ease, transform .15s ease, box-shadow .15s ease;
+}
+.card.reveal.visible { opacity: 1; }
+
+/* --- Hero entrance (gentle fade/slide on page load) --- */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-copy { animation: heroFadeUp .7s ease both; }
+.hero-media { animation: heroFadeUp .7s .12s ease both; }
+
+/* --- Sticky mobile bar: gentle slide-up on load --- */
+@media (max-width: 680px) {
+  .sticky-bar { animation: barIn .45s ease both; }
+}
+@keyframes barIn {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* --- Respect reduced-motion: disable ALL animation/transitions --- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero-copy, .hero-media { animation: none !important; }
+}
