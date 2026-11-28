@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login / My Account — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
-<meta name="description" content="Sign in to your Al Kareem account — patients and students use the same login. Demo preview only.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<title>Login / My Account &mdash; Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
+<meta name="description" content="Sign in to your Al Kareem account — patients and students use the same login. Demo accounts only.">
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
 <body data-page="login">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
-
-<div class="topbar">
+<div class="topbar" id="top">
   <span>Timings: 10:00 AM – 10:00 PM</span>
-  <span aria-hidden="true">&bull;</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>Open 7 days a week</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
   <a href="tel:03051974180">0305-1974180</a>
-  <span aria-hidden="true">&bull;</span>
-  <span>Main: Super Chowk, Lodhran</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>1 Clinic — Super Chowk, Lodhran</span>
 </div>
 
 <header class="site">
@@ -115,7 +111,8 @@
   <div class="drawer-contact">
     <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
     Timings: 10:00 AM – 10:00 PM<br>
-    Main: Super Chowk, Lodhran
+    Open 7 days a week<br>
+    1 Clinic — Super Chowk, Lodhran
   </div>
 </aside>
 
@@ -138,43 +135,52 @@
 <!-- ===== HEADER BLOCK — copy ends here ===== -->
 
 <main id="main-content">
-<!-- Signed-out view: shown by default; the shared app.js hides it when a demo session exists. -->
+
   <section id="signin-view" data-show-when="logged-out" aria-labelledby="signin-heading">
-    <div class="signin-card">
-      <p class="demo-tag">DEMO</p>
+    <div class="signin-card panel">
+      <p><span class="demo-tag">Demo</span></p>
       <h1 id="signin-heading">Welcome back</h1>
-      <p>Sign in to your Al Kareem account — patients and students use the same login.</p>
+      <p>Sign in to your Al Kareem account &mdash; patients and students use the same login.</p>
       <form id="login-form" class="form" novalidate>
         <div class="field">
-          <label for="signin-email">Email</label>
+          <label for="login-email">Email</label>
           <input type="email" id="login-email" name="email" autocomplete="email" required>
-          <p class="field-error" id="login-email-error" hidden>Enter a valid email address.</p>
+          <span class="field-error" id="login-email-error" hidden>Enter a valid email address.</span>
         </div>
         <div class="field">
-          <label for="signin-password">Password</label>
+          <label for="login-password">Password</label>
           <input type="password" id="login-password" name="password" autocomplete="current-password" required>
-          <p class="field-error" id="login-password-error" hidden>Enter your password.</p>
+          <span class="field-error" id="login-password-error" hidden>Enter your password.</span>
         </div>
-        <button type="submit" class="btn">Sign in</button>
-        <p class="form-note">Demo only — no real sign-in happens. Use one of the demo sign-in buttons below.</p>
+        <div class="field">
+          <label for="login-role">Role</label>
+          <select id="login-role" name="role">
+            <option value="demo-patient">Patient</option>
+            <option value="demo-admin">Admin</option>
+          </select>
+        </div>
+        <button type="submit" class="btn block">Sign in</button>
+        <p class="form-note">Demo only &mdash; no real sign-in happens. Use one of the demo sign-in buttons below.</p>
       </form>
-      <div class="divider" aria-hidden="true"><span>DEMO SIGN-IN</span></div>
-      <p class="form-note">DEMO — no real auth. Choose a demo role to preview the account pages.</p>
-      <button type="button" class="btn outline demo-signin" data-demo-login="demo-patient" data-demo-name="Demo Patient">Sign in as Demo Patient</button>
-      <button type="button" class="btn outline demo-signin" data-demo-login="demo-admin" data-demo-name="Demo Admin">Sign in as Demo Admin</button>
-      <p class="form-note">New account? Demo accounts only &mdash; no self-registration in this demo.</p>
+      <hr class="divider">
+      <p class="form-note"><strong>Demo accounts only &mdash; no self-registration in this preview.</strong> Choose a demo role to preview the account pages.</p>
+      <div class="demo-signin">
+        <button type="button" class="btn outline" data-demo-login="demo-patient" data-demo-name="Demo Patient">Sign in as Demo Patient</button>
+        <button type="button" class="btn outline" data-demo-login="demo-admin" data-demo-name="Demo Admin">Sign in as Demo Admin</button>
+      </div>
+      <p class="form-note">New account? Demo accounts only &mdash; no self-registration in this preview.</p>
+      <p><a class="link-btn" href="index.html">&larr; Back to Home</a></p>
     </div>
   </section>
 
-  <!-- Signed-in view: hidden until the shared app.js sets a localStorage demo session and shows it. -->
   <section id="account-view" aria-labelledby="account-heading" data-show-when="logged-in" hidden>
-    <div class="signin-card account-card">
-      <p class="demo-tag">DEMO — MY ACCOUNT</p>
+    <div class="signin-card account-card panel">
+      <p><span class="demo-tag">Demo &mdash; My Account</span></p>
       <h1 id="account-heading">My Account</h1>
       <div class="demo-user-card">
-        <p><strong>Demo user</strong></p>
+        <h3><span data-account-name>Demo user</span></h3>
         <p>Role: <span data-demo-role-label>Demo Patient</span></p>
-        <p class="form-note">DEMO — no real account. This is a preview of the account pages only.</p>
+        <p class="form-note">Demo &mdash; no real account. This is a preview of the account pages only.</p>
       </div>
       <nav aria-label="My account links">
         <div data-role-group="patient">
@@ -184,7 +190,7 @@
             <li><a href="login.html">My Sessions / History</a></li>
             <li><a href="login.html">My Account</a></li>
           </ul>
-          <p class="form-note">Demo — no appointments or session history yet.</p>
+          <p class="form-note">Demo &mdash; no appointments or session history yet.</p>
         </div>
         <div data-role-group="admin" hidden>
           <h3>Admin</h3>
@@ -198,13 +204,14 @@
             <li><a href="admin.html#orders">Orders</a></li>
             <li><a href="admin.html#settings">Settings</a></li>
           </ul>
-          <p class="form-note">Demo — no live data.</p>
+          <p class="form-note">Demo &mdash; no live data.</p>
         </div>
       </nav>
-      <button type="button" class="btn outline" data-demo-logout>Log out</button>
+      <p><button type="button" class="btn outline" data-demo-logout>Log out</button></p>
       <p class="form-note">Log out clears the demo session.</p>
     </div>
   </section>
+
 </main>
 
 <a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -248,9 +255,10 @@
       </ul>
     </div>
   </div>
-  <div class="bottom">Demo preview — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
+  <div class="bottom">Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
 </footer>
 
 
+<a class="back-to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
 </body>
 </html>

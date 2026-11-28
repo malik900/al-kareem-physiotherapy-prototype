@@ -4,25 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services | Al Kareem Physiotherapy &amp; Rehabilitation Centre, Lodhran</title>
-<meta name="description" content="Twelve physiotherapy services from the clinic flyers, plus condition-led routing to booking.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>:root{--navy:#0a2540;--blue:#1b6fb5;--blue-soft:#e8f1fb;--ink:#12263a;--muted:#54697e;--line:#d7e3ef}</style>
+<meta name="description" content="Twelve physiotherapy services from the clinic flyers, plus departments and fees — Al Kareem Physiotherapy, Lodhran.">
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
 <body data-page="services">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
-
-<div class="topbar">
+<div class="topbar" id="top">
   <span>Timings: 10:00 AM – 10:00 PM</span>
-  <span aria-hidden="true">&bull;</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>Open 7 days a week</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
   <a href="tel:03051974180">0305-1974180</a>
-  <span aria-hidden="true">&bull;</span>
-  <span>Main: Super Chowk, Lodhran</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>1 Clinic — Super Chowk, Lodhran</span>
 </div>
 
 <header class="site">
@@ -115,7 +111,8 @@
   <div class="drawer-contact">
     <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
     Timings: 10:00 AM – 10:00 PM<br>
-    Main: Super Chowk, Lodhran
+    Open 7 days a week<br>
+    1 Clinic — Super Chowk, Lodhran
   </div>
 </aside>
 
@@ -136,93 +133,153 @@
   </div>
 </aside>
 <!-- ===== HEADER BLOCK — copy ends here ===== -->
+<main id="main-content">
 
-<main id="main-content" class="container">
-<section class="page-head">
+  <section class="page-head">
+    <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Services</p>
     <p class="eyebrow">Our Services</p>
     <h1>Services</h1>
-    <p class="lead">Twelve services from the clinic flyers.</p>
-  </section>
-  <p class="note">Check-up fee Rs. 700, follow-up fee Rs. 500 (from a wall notice in the clinic&rsquo;s reel, 31 Oct 2026). Per-service fees are confirmed at booking.</p>
-
-  <section class="panel">
-    <h2>Our Departments</h2>
-    <p>From the clinic's own Instagram reel (31 Oct 2026): Male Physiotherapy Department, Female Physiotherapy Department, Pediatric Physiotherapy Department, Neuro Rehabilitation Department &mdash; plus Stroke Rehabilitation, Musculoskeletal &amp; Orthopedic Rehabilitation, Sports Injury Rehabilitation, and Advanced Exercise &amp; Rehabilitation Programs.</p>
+    <p class="lead">Twelve services from the clinic flyers — one-on-one care with Dr. Muhammad Imran, DPT (IUB), MS NMPT (TUM), at Super Chowk, Lodhran.</p>
   </section>
 
-  <section class="conditions">
+  <section class="trust" aria-label="At a glance">
+    <ul class="trust-strip">
+      <li class="t">12 Services<span class="t-sub">From the clinic flyers</span></li>
+      <li class="t">7 Departments<span class="t-sub">Male &middot; Female &middot; Pediatric &amp; more</span></li>
+      <li class="t">Rs. 700<span class="t-sub">Check-up fee</span></li>
+      <li class="t">Rs. 500<span class="t-sub">Follow-up fee</span></li>
+      <li class="t">10 AM &ndash; 10 PM<span class="t-sub">Open 7 days a week</span></li>
+    </ul>
+  </section>
+
+  <section>
     <div class="section-head">
-      <h2>What hurts? Start here.</h2>
-    </div>
-    <div class="cards">
-      <article class="card condition-card">
-        <h3>Back Pain</h3>
-        <a class="link-btn" href="book.html">Learn More &rarr;</a>
-      </article>
-      <article class="card condition-card">
-        <h3>Paralysis</h3>
-        <a class="link-btn" href="book.html">Learn More &rarr;</a>
-      </article>
-      <article class="card condition-card">
-        <h3>Stroke / Neuro Rehab</h3>
-        <a class="link-btn" href="book.html">Learn More &rarr;</a>
-      </article>
-      <article class="card condition-card">
-        <h3>Sports Injury</h3>
-        <a class="link-btn" href="book.html">Learn More &rarr;</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="service-list">
-    <div class="section-head">
-      <h2>All Services</h2>
+      <p class="eyebrow">All services</p>
+      <h2>What we treat</h2>
+      <p class="section-intro">Choose the service closest to your condition — every route starts with the same one-on-one assessment with Dr. Imran.</p>
     </div>
     <div class="cards">
       <article class="card service-card">
+        <img class="card-media" src="images/manual-therapy.jpg" alt="Photo for illustration — Physiotherapy Treatment" loading="lazy">
         <h3>Physiotherapy Treatment</h3>
+        <p>One-on-one assessment and treatment with Dr. Imran, planned around your condition.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/physio-care.jpg" alt="Photo for illustration — Pain Relief" loading="lazy">
         <h3>Pain Relief</h3>
+        <p>Treatment focused on easing pain and helping you move more comfortably.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/rehab-gym.jpg" alt="Photo for illustration — Post-Surgery Rehab" loading="lazy">
         <h3>Post-Surgery Rehab</h3>
+        <p>Guided rehabilitation to rebuild strength and movement after surgery.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/sports-injury.jpg" alt="Photo for illustration — Sports Injury Rehab" loading="lazy">
         <h3>Sports Injury Rehab</h3>
+        <p>Rehabilitation for sports injuries, with a plan to return to activity.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/neuro-rehab.jpg" alt="Photo for illustration — Neurological Rehab" loading="lazy">
         <h3>Neurological Rehab</h3>
+        <p>Rehabilitation for neurological conditions, including paralysis.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/pediatric.jpg" alt="Photo for illustration — CP Children Therapy" loading="lazy">
         <h3>CP Children Therapy</h3>
+        <p>Therapy for children with cerebral palsy, in a child-friendly setting.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/neuro-rehab.jpg" alt="Photo for illustration — Stroke Rehab" loading="lazy">
         <h3>Stroke Rehab</h3>
+        <p>Recovery and rehabilitation after stroke, including gait and movement training.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
-        <h3>Back & Neck Pain</h3>
+        <img class="card-media" src="images/back-neck.jpg" alt="Photo for illustration — Back &amp; Neck Pain" loading="lazy">
+        <h3>Back &amp; Neck Pain</h3>
+        <p>Assessment and treatment for back pain, neck pain and stiffness.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
-        <h3>Knee & Joint Therapy</h3>
+        <img class="card-media" src="images/manual-therapy.jpg" alt="Photo for illustration — Knee &amp; Joint Therapy" loading="lazy">
+        <h3>Knee &amp; Joint Therapy</h3>
+        <p>Treatment for knee and joint pain, stiffness and reduced movement.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/geriatric.jpg" alt="Photo for illustration — Geriatric Care" loading="lazy">
         <h3>Geriatric Care</h3>
+        <p>Gentle, individualized physiotherapy care for older adults.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/pediatric.jpg" alt="Photo for illustration — Pediatric Rehab" loading="lazy">
         <h3>Pediatric Rehab</h3>
+        <p>Rehabilitation and movement therapy for children.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
       <article class="card service-card">
+        <img class="card-media" src="images/rehab-gym.jpg" alt="Photo for illustration — Musculoskeletal Rehab" loading="lazy">
         <h3>Musculoskeletal Rehab</h3>
+        <p>Rehabilitation for muscles, joints and bones — including exercise-based recovery.</p>
+        <p class="small muted">Photo for illustration</p>
+        <div class="card-actions"><a class="link-btn" href="book.html">Book this service &rarr;</a></div>
       </article>
+    </div>
+    <p class="note" style="margin-top:14px;">Photos on this page are stock photos for illustration only — they do not show this clinic, its staff or its patients.</p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Departments</p>
+      <h2>Our Departments</h2>
+      <p class="section-intro">From the clinic&rsquo;s own Instagram reel (31 Oct 2026).</p>
+    </div>
+    <div class="category-grid">
+      <article class="card category-card"><img class="card-media" src="images/dept-male.jpg" alt="Photo for illustration — Male Physiotherapy" loading="lazy"><h3>Male Physiotherapy</h3><p>Physiotherapy department for men.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-female.jpg" alt="Photo for illustration — Female Physiotherapy" loading="lazy"><h3>Female Physiotherapy</h3><p>Physiotherapy department for women.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-pediatric.jpg" alt="Photo for illustration — Pediatric Physiotherapy" loading="lazy"><h3>Pediatric Physiotherapy</h3><p>Physiotherapy for children, including CP therapy.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-neuro.jpg" alt="Photo for illustration — Neuro + Stroke" loading="lazy"><h3>Neuro + Stroke</h3><p>Neurological rehabilitation and stroke rehab.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-msk.jpg" alt="Photo for illustration — MSK & Orthopedic" loading="lazy"><h3>MSK &amp; Orthopedic</h3><p>Musculoskeletal and orthopedic rehabilitation.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-sports.jpg" alt="Photo for illustration — Sports Injury" loading="lazy"><h3>Sports Injury</h3><p>Rehabilitation for sports injuries.</p></article>
+      <article class="card category-card"><img class="card-media" src="images/dept-exercise.jpg" alt="Photo for illustration — Advanced Exercise & Rehab Programs" loading="lazy"><h3>Advanced Exercise &amp; Rehab Programs</h3><p>Exercise-based rehabilitation programs in the clinic&rsquo;s exercise and gait hall.</p></article>
     </div>
   </section>
 
-  <section class="help-strip panel">
-    <h2>Not sure which treatment you need?</h2>
-    <p>Call the clinic &mdash; <a href="tel:03051974180">0305-1974180</a></p>
-    <p><a class="btn navy" href="book.html">Book a session</a></p>
+  <section class="panel" style="margin-top:40px;">
+    <h2>Fees</h2>
+    <p><strong>Check-up fee Rs. 700, follow-up fee Rs. 500</strong> &mdash; from a wall notice in the clinic&rsquo;s reel, 31 Oct 2026. Per-service fees are confirmed at booking.</p>
+    <div class="hero-actions"><a class="btn navy" href="book.html">Book Appointment</a> <a class="btn outline" href="tel:03051974180">Call 0305-1974180</a></div>
   </section>
+
+  <section class="cta-band">
+    <h2>Not sure which service you need?</h2>
+    <p>Call the clinic and describe your problem — Dr. Imran will guide you to the right service.</p>
+    <div class="cta-actions">
+      <a class="btn" href="book.html">Book Appointment</a>
+      <a class="btn wa-btn" href="https://wa.me/923051974180">WhatsApp Us</a>
+    </div>
+    <p class="cta-note">WhatsApp: +92 305 1974180 &middot; Open 7 days, 10:00 AM – 10:00 PM</p>
+  </section>
+
 </main>
 
 <a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -266,9 +323,10 @@
       </ul>
     </div>
   </div>
-  <div class="bottom">Demo preview — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
+  <div class="bottom">Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
 </footer>
 
 
+<a class="back-to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
 </body>
 </html>

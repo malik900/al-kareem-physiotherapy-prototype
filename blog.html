@@ -3,58 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog &amp; Knowledge Center — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
+<title>Blog &amp; Knowledge Center &mdash; Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran</title>
 <meta name="description" content="Physiotherapy and rehabilitation information from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran — older adults, Bell's palsy, stroke hand rehab and frozen shoulder.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* Blog page — plainest module (design-system §6.4). Page-scoped fallback only;
-   shared style.css owns the chrome. Tokens byte-exact from design-system §1. */
-:root{--navy:#0a2540;--blue:#1b6fb5;--blue-soft:#e8f1fb;--ink:#12263a;--muted:#54697e;--line:#d7e3ef}
-.blog-main{background:#fff;color:var(--ink)}
-.blog-column{max-width:700px;margin:0 auto;padding:0 18px 70px}
-.blog-column h1,.blog-column h2,.blog-column h3{color:var(--navy);line-height:1.2}
-.blog-column h1{font-size:clamp(28px,5vw,36px);font-weight:800}
-.blog-column h2{font-size:24px;font-weight:800;margin:46px 0 8px}
-.blog-column h3{font-size:18px;font-weight:800}
-.blog-column p{line-height:1.7;font-size:18px}
-.blog-column .lead{color:var(--muted);font-size:16px}
-.blog-column a{color:var(--blue)}
-.blog-empty{border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:18px}
-.blog-empty p{margin:0;font-size:16px;color:var(--muted)}
-.blog-categories{list-style:none;padding:0;margin:18px 0 0}
-.blog-categories li{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:16px}
-.blog-categories li span:last-child{color:var(--muted);white-space:nowrap}
-.blog-search{display:flex;gap:10px;margin-top:18px}
-.blog-search input{flex:1}
-.blog-note{font-size:14.5px;color:var(--muted);line-height:1.6}
-.blog-editorial{background:var(--blue-soft);border-left:4px solid var(--blue);border-radius:12px;padding:13px 16px;margin-top:18px}
-.blog-editorial p{font-size:14.5px;line-height:1.6;margin:0}
-.needed{color:#a10000;background:#fdecec;border:1px dashed #d33;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:700}
-.demo-tag{color:#4a3600;background:#ffd166;border-radius:999px;padding:1px 10px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.blog-article{border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:18px;background:#fff}
-.blog-article h3{margin:0 0 6px}
-.blog-article h3 a{color:var(--navy);text-decoration:none}
-.blog-article h3 a:hover{color:var(--blue);text-decoration:underline}
-.blog-article .meta{font-size:13.5px;color:var(--muted);margin:0 0 12px}
-.blog-article p{font-size:16px}
-.blog-source{font-size:14px;color:var(--muted);margin:14px 0 0}
-</style>
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
 <body data-page="blog">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
-
-<div class="topbar">
+<div class="topbar" id="top">
   <span>Timings: 10:00 AM – 10:00 PM</span>
-  <span aria-hidden="true">&bull;</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>Open 7 days a week</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
   <a href="tel:03051974180">0305-1974180</a>
-  <span aria-hidden="true">&bull;</span>
-  <span>Main: Super Chowk, Lodhran</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>1 Clinic — Super Chowk, Lodhran</span>
 </div>
 
 <header class="site">
@@ -147,7 +111,8 @@
   <div class="drawer-contact">
     <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
     Timings: 10:00 AM – 10:00 PM<br>
-    Main: Super Chowk, Lodhran
+    Open 7 days a week<br>
+    1 Clinic — Super Chowk, Lodhran
   </div>
 </aside>
 
@@ -169,121 +134,142 @@
 </aside>
 <!-- ===== HEADER BLOCK — copy ends here ===== -->
 
-<main id="main-content" class="blog-main">
-<div class="blog-column">
+<main id="main-content">
 
-    <header>
-      <p class="eyebrow">Blog</p>
-      <h1>Blog &amp; Knowledge Center</h1>
-      <p class="lead">Physiotherapy and rehabilitation information from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran.</p>
-    </header>
+  <div class="page-head">
+    <p class="eyebrow">Blog</p>
+    <h1>Blog &amp; Knowledge Center</h1>
+    <p>Physiotherapy and rehabilitation information from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran.</p>
+  </div>
+  <div class="blog-main">
+    <div class="blog-column">
+      <h2>Featured article</h2>
 
-    <section aria-labelledby="featured-heading">
-      <h2 id="featured-heading">Featured article</h2>
-      <article class="blog-article" id="physio-older-adults">
+      <article class="panel blog-article" id="physio-older-adults">
+        <span class="tag">Geriatric Care</span>
         <h3>Physiotherapy for Older Adults: Staying Mobile, Steady and Independent</h3>
         <p class="meta">Geriatric Care &middot; 9 Feb 2026</p>
+        <figure>
+          <img src="images/geriatric.jpg" alt="A physiotherapist assisting an older man with a seated dumbbell exercise &mdash; photo for illustration" width="724" height="483" loading="lazy">
+          <figcaption class="muted small">Photo for illustration</figcaption>
+        </figure>
         <p>As we grow older, joints stiffen, muscles weaken and everyday movements &mdash; climbing stairs, getting up from a chair, walking to the shops &mdash; slowly become harder. Regular physiotherapy in old age is not about treating one injury; it is about keeping the whole body moving well for as long as possible.</p>
         <p>A physiotherapist first looks at how you walk, balance and move, then builds a gentle programme around it: stretching and strengthening for painful joints and muscles, balance training to steady your step, and walking practice to keep your stride confident. Over time this eases joint and muscle pain, protects mobility, and improves walking, balance and strength.</p>
         <p>The benefit that matters most is safety at home. Stronger legs and better balance lower the risk of falls &mdash; the most common cause of serious injury in older adults. And as movement improves, daily tasks become easier again: dressing, cooking, bathing, getting out on your own.</p>
         <p>Ageing is not a reason to stop moving. With the right guidance, regular physiotherapy helps older adults stay active, steady and independent in their own homes.</p>
         <p class="blog-source">Source: the clinic&rsquo;s Instagram post &mdash; <a href="https://www.instagram.com/p/DUicr6QDGUj/" target="_blank" rel="noopener">instagram.com/p/DUicr6QDGUj</a></p>
       </article>
-    </section>
+      <h2>Latest articles</h2>
 
-    <section aria-labelledby="latest-heading">
-      <h2 id="latest-heading">Latest articles</h2>
-      <article class="blog-article" id="bells-palsy">
+      <article class="panel blog-article" id="bells-palsy">
+        <span class="tag">Neurological Rehab</span>
         <h3>Bell&rsquo;s Palsy (Laqwa): When One Side of the Face Suddenly Weakens</h3>
         <p class="meta">Neurological Rehab &middot; 30 Oct 2025</p>
+        <figure>
+          <img src="images/neuro-rehab.jpg" alt="An older man practising walking between parallel bars with a therapist &mdash; photo for illustration" width="1600" height="555" loading="lazy">
+          <figcaption class="muted small">Photo for illustration</figcaption>
+        </figure>
         <p>Bell&rsquo;s palsy, known locally as laqwa, can arrive without warning. A swollen or compressed facial nerve suddenly weakens the muscles on one side of the face: the mouth pulls to one side, the eye will not close fully, and speaking and eating become difficult. It is frightening &mdash; but with the right care, most people recover.</p>
         <p>Physiotherapy plays a central role in that recovery. Treatment usually begins with electrical stimulation to wake up the weakened facial muscles, combined with gentle facial massage to improve blood flow and keep the muscles supple. Guided facial exercises then retrain the muscles to move again &mdash; raising the eyebrow, closing the eye, smiling &mdash; practised little and often.</p>
         <p>Taping can support the weak side of the face and help protect the eye, while mirror therapy lets the patient watch their own face as they practise, so the brain relearns the correct movement patterns.</p>
         <p>The key is to start early and practise regularly. Bell&rsquo;s palsy affects the face, but its effects reach much further &mdash; confidence, eating, speaking and daily life. Physiotherapy works on all of it, one small movement at a time, until the face moves freely again.</p>
         <p class="blog-source">Source: the clinic&rsquo;s Instagram post &mdash; <a href="https://www.instagram.com/p/DQdZ0A9jItn/" target="_blank" rel="noopener">instagram.com/p/DQdZ0A9jItn</a></p>
       </article>
-      <article class="blog-article" id="stroke-hand-skills">
+      <article class="panel blog-article" id="stroke-hand-skills">
+        <span class="tag">Stroke Rehab</span>
         <h3>After a Stroke: Relearning Everyday Hand Skills</h3>
         <p class="meta">Stroke Rehab &middot; 4 Nov 2025</p>
+        <figure>
+          <img src="images/rehab-gym.jpg" alt="A woman walking between parallel bars with therapist support in a rehab gym &mdash; photo for illustration" width="724" height="483" loading="lazy">
+          <figcaption class="muted small">Photo for illustration</figcaption>
+        </figure>
         <p>After a stroke, the simplest actions can feel impossible: switching on a light, turning a key, pulling up a zip. The hand that once did these things without thinking now struggles with grip, coordination and fine control &mdash; and with them, independence slips away.</p>
         <p>Stroke rehabilitation rebuilds those skills by practising the actions themselves. At the clinic, patients work on a functional activity board &mdash; a board fitted with everyday fittings such as switches, locks and zippers &mdash; repeating the exact movements of daily life until the hand relearns them.</p>
         <p>Each repetition matters. Turning a switch trains the pinch grip; working a lock builds wrist control; pulling a zip practises coordinated finger movement. Slowly, grip strengthens, coordination returns and fine hand control improves.</p>
         <p>The goal is never the board itself &mdash; it is what the board makes possible: dressing without help, opening a door, making a cup of tea. Relearning hand skills is relearning independence, one everyday action at a time. If you or a family member is recovering from a stroke, ask at the clinic about a rehabilitation plan.</p>
         <p class="blog-source">Source: the clinic&rsquo;s Instagram post &mdash; <a href="https://www.instagram.com/p/DQqZ42ojKez/" target="_blank" rel="noopener">instagram.com/p/DQqZ42ojKez</a></p>
       </article>
-    </section>
+      <h2>Popular articles</h2>
 
-    <section aria-labelledby="popular-heading">
-      <h2 id="popular-heading">Popular articles</h2>
-      <article class="blog-article" id="frozen-shoulder">
+      <article class="panel blog-article" id="frozen-shoulder">
+        <span class="tag">Musculoskeletal Rehab</span>
         <h3>Frozen Shoulder: When the Shoulder Slowly Locks Up</h3>
         <p class="meta">Musculoskeletal Rehab &middot; 23 Oct 2025</p>
+        <figure>
+          <img src="images/shoulder-exercise.jpg" alt="A person performing a shoulder pulley exercise &mdash; photo for illustration" width="1182" height="1182" loading="lazy">
+          <figcaption class="muted small">Photo for illustration</figcaption>
+        </figure>
         <p>A frozen shoulder does not happen overnight. It creeps in: reaching for a shelf becomes harder, then fastening a seatbelt, then lifting an arm to comb your hair. Week by week the shoulder stiffens until movement is locked and even simple tasks hurt.</p>
         <p>The condition &mdash; a stiffening and tightening of the tissues around the shoulder joint &mdash; progresses in stages, from pain to stiffness to a slow thaw. Left alone it can take months or years to ease. Targeted physiotherapy speeds that process up.</p>
         <p>Treatment combines hands-on manual therapy, which gently loosens the tight tissues around the joint, with guided exercises the patient does every day. Wall-ladder exercises &mdash; walking the fingers up a ladder fixed to the wall &mdash; gradually restore overhead reach, while a shoulder wheel builds smooth, controlled rotation.</p>
         <p>Done regularly, this combination restores mobility and reach: the arm lifts higher, the shoulder turns more freely, and daily tasks stop hurting. The earlier treatment starts, the faster the shoulder thaws. If your shoulder is stiffening and your reach is shrinking, book an assessment at the clinic.</p>
         <p class="blog-source">Source: the clinic&rsquo;s Instagram post &mdash; <a href="https://www.instagram.com/p/DQJgcdgDELt/" target="_blank" rel="noopener">instagram.com/p/DQJgcdgDELt</a></p>
       </article>
-    </section>
-
-    <section aria-labelledby="categories-heading">
-      <h2 id="categories-heading">Categories</h2>
-      <p class="blog-note">Categories used by the articles below.</p>
-      <ul class="blog-categories">
-        <li><span>Geriatric Care</span><span>1 article</span></li>
-        <li><span>Neurological Rehab</span><span>1 article</span></li>
-        <li><span>Stroke Rehab</span><span>1 article</span></li>
-        <li><span>Musculoskeletal Rehab</span><span>1 article</span></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="search-heading">
-      <h2 id="search-heading">Search articles</h2>
-      <form class="blog-search" action="blog.html" method="get" role="search">
-        <label class="visually-hidden" for="blog-search-input">Search articles</label>
-        <input id="blog-search-input" class="search-input" type="search" name="q" placeholder="Search articles">
-        <button class="btn" type="submit">Search</button>
-      </form>
-      <p class="blog-note search-results">4 articles published.</p>
-    </section>
-
-    <section aria-labelledby="trending-heading">
-      <h2 id="trending-heading">Trending topics</h2>
-      <div class="blog-empty">
-        <p>Trending now: physiotherapy for older adults, Bell&rsquo;s palsy, stroke hand rehab, frozen shoulder.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="newsletter-heading">
-      <h2 id="newsletter-heading">Newsletter <span class="demo-tag">Demo</span></h2>
-      <p class="blog-note">Demo form only — no subscription is saved.</p>
-      <form id="newsletter-form" class="blog-search newsletter-form" action="blog.html" method="get">
-        <label class="visually-hidden" for="newsletter-email">Email address</label>
-        <input id="newsletter-email" type="email" name="email" placeholder="Your email address" required>
-        <button class="btn" type="submit">Subscribe</button>
-      </form>
-      <p class="blog-note newsletter-message">Demo — no subscription saved.</p>
-    </section>
-
-    <section aria-labelledby="editorial-heading">
-      <h2 id="editorial-heading">Editorial standards</h2>
-      <div class="blog-editorial">
-        <p>Articles on the live site are reviewed by Dr. Muhammad Imran before publication. Articles are educational information, not a substitute for medical advice — see a doctor for diagnosis and treatment.</p>
-      </div>
-      <p class="blog-note">Articles are for general information only and are not a substitute for professional medical advice. Please consult Dr. Imran at the clinic for advice about your condition.</p>
-    </section>
-
-    <section aria-labelledby="related-heading">
-      <h2 id="related-heading">Related articles</h2>
-      <ul>
-        <li><a href="#physio-older-adults">Physiotherapy for Older Adults: Staying Mobile, Steady and Independent</a></li>
-        <li><a href="#bells-palsy">Bell&rsquo;s Palsy (Laqwa): When One Side of the Face Suddenly Weakens</a></li>
-        <li><a href="#stroke-hand-skills">After a Stroke: Relearning Everyday Hand Skills</a></li>
-        <li><a href="#frozen-shoulder">Frozen Shoulder: When the Shoulder Slowly Locks Up</a></li>
-      </ul>
-    </section>
-
+    </div>
+    <aside>
+      <section class="panel" aria-labelledby="search-heading">
+        <h3 id="search-heading">Search articles</h3>
+        <form class="search-bar blog-search" action="blog.html" method="get" role="search">
+          <label class="visually-hidden" for="blog-search-input">Search articles</label>
+          <input id="blog-search-input" class="search-input" type="search" name="q" placeholder="Search">
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <p class="blog-note">4 articles published.</p>
+      </section>
+      <section class="panel" aria-labelledby="categories-heading">
+        <h3 id="categories-heading">Categories</h3>
+        <ul class="blog-categories">
+          <li><a href="#physio-older-adults">Geriatric Care</a> <span class="muted small">1 article</span></li>
+          <li><a href="#bells-palsy">Neurological Rehab</a> <span class="muted small">1 article</span></li>
+          <li><a href="#stroke-hand-skills">Stroke Rehab</a> <span class="muted small">1 article</span></li>
+          <li><a href="#frozen-shoulder">Musculoskeletal Rehab</a> <span class="muted small">1 article</span></li>
+        </ul>
+      </section>
+      <section class="panel" aria-labelledby="trending-heading">
+        <h3 id="trending-heading">Trending topics</h3>
+        <div class="blog-empty">
+          <p>Trending now: physiotherapy for older adults, Bell&rsquo;s palsy, stroke hand rehab, frozen shoulder.</p>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="newsletter-heading">
+        <h3 id="newsletter-heading">Newsletter <span class="demo-tag">Demo</span></h3>
+        <p class="blog-note">Demo form only &mdash; no subscription is saved.</p>
+        <form id="newsletter-form" class="search-bar newsletter-form" action="blog.html" method="get">
+          <label class="visually-hidden" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" class="search-input" type="email" name="email" placeholder="Email" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+        <p class="blog-note">Demo &mdash; no subscription saved.</p>
+      </section>
+      <section class="panel" aria-labelledby="editorial-heading">
+        <h3 id="editorial-heading">Editorial standards</h3>
+        <div class="blog-editorial">
+          <p>Articles on the live site are reviewed by Dr. Muhammad Imran before publication. Articles are educational information, not a substitute for medical advice &mdash; see a doctor for diagnosis and treatment.</p>
+        </div>
+        <p class="blog-note">Articles are for general information only and are not a substitute for professional medical advice. Please consult Dr. Imran at the clinic for advice about your condition.</p>
+      </section>
+      <section class="panel" aria-labelledby="related-heading">
+        <h3 id="related-heading">Related articles</h3>
+        <ul>
+          <li><a href="#physio-older-adults">Physiotherapy for Older Adults: Staying Mobile, Steady and Independent</a></li>
+          <li><a href="#bells-palsy">Bell&rsquo;s Palsy (Laqwa): When One Side of the Face Suddenly Weakens</a></li>
+          <li><a href="#stroke-hand-skills">After a Stroke: Relearning Everyday Hand Skills</a></li>
+          <li><a href="#frozen-shoulder">Frozen Shoulder: When the Shoulder Slowly Locks Up</a></li>
+        </ul>
+      </section>
+    </aside>
   </div>
+
+  <section class="cta-band">
+    <h2>Ready to Start Your Recovery?</h2>
+    <p>Book an appointment or message the clinic on WhatsApp.</p>
+    <div class="cta-actions">
+      <a class="btn" href="book.html">Book Appointment</a>
+      <a class="btn wa-btn" href="https://wa.me/923051974180">WhatsApp Us</a>
+    </div>
+    <p class="cta-note">WhatsApp: +92 305 1974180</p>
+  </section>
+
 </main>
 
 <a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -327,9 +313,10 @@
       </ul>
     </div>
   </div>
-  <div class="bottom">Demo preview — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
+  <div class="bottom">Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
 </footer>
 
 
+<a class="back-to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
 </body>
 </html>

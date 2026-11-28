@@ -3,49 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clinic Products — Al Kareem Physiotherapy &amp; Rehabilitation Centre, Lodhran</title>
-<meta name="description" content="Clinic products from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  /* Store-only layout helpers (tokens per design-system.md §1; shared style.css owns the chrome).
-     Kept minimal so the CSS lead's shared stylesheet stays authoritative. */
-  .store-hero { padding: 30px 0 8px; }
-  .store-hero h1 { color: #0a2540; font-size: clamp(30px, 6.5vw, 46px); font-weight: 800; line-height: 1.2; letter-spacing: -0.015em; margin: 0 0 8px; }
-  .store-hero .lead { color: #54697e; font-size: 16px; line-height: 1.6; max-width: 640px; margin: 0; }
-  .search-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-  .search-bar input { flex: 1; min-width: 220px; padding: 13px 16px; border: 1.5px solid #c4d5e6; border-radius: 11px; font-size: 15px; font-family: inherit; background: #fff; color: #12263a; }
-  .search-bar input:focus { outline: none; border-color: #1b6fb5; box-shadow: 0 0 0 3px rgba(27,111,181,.14); }
-  .cat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 15px; margin-top: 18px; }
-  .product-card .price { font-size: 20px; font-weight: 800; color: #0a2540; margin: 10px 0 14px; }
-  .product-card .source-note { font-size: 13.5px; color: #54697e; margin: 8px 0 0; }
-  .product-card .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .empty-state { background: #fff; border: 1px solid #d7e3ef; border-radius: 16px; padding: 22px; margin-top: 18px; color: #54697e; font-size: 14.5px; line-height: 1.6; }
-  .equipment-list { list-style: none; margin: 12px 0 0; padding: 0; columns: 2; column-gap: 24px; }
-  .equipment-list li { font-size: 14.5px; color: #12263a; line-height: 1.6; padding: 4px 0; break-inside: avoid; }
-  @media (max-width: 680px) { .equipment-list { columns: 1; } }
-  .coming-soon { margin-top: 26px; color: #54697e; font-size: 14.5px; line-height: 1.6; }
-  .section-head { margin: 46px 0 8px; }
-  .section-head h2 { color: #0a2540; font-size: clamp(25px, 5vw, 34px); font-weight: 800; line-height: 1.2; letter-spacing: -0.015em; margin: 0 0 6px; }
-  .section-head p { color: #54697e; font-size: 14.5px; line-height: 1.6; max-width: 640px; margin: 0; }
-  .confirm-note { font-size: 13.5px; color: #54697e; margin: 8px 0 0; }
-</style>
+<title>Store &mdash; Al Kareem Physiotherapy &amp; Rehabilitation Centre, Lodhran</title>
+<meta name="description" content="Clinic products from Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Shoulder Pulley Rs 850; free home delivery within Lodhran City.">
 <link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
 <body data-page="store">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<div class="demo-bar"><strong>DEMO PREVIEW</strong> — No real bookings, orders, or payments. Nothing here is live.</div>
-
-<div class="topbar">
+<div class="topbar" id="top">
   <span>Timings: 10:00 AM – 10:00 PM</span>
-  <span aria-hidden="true">&bull;</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>Open 7 days a week</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
   <a href="tel:03051974180">0305-1974180</a>
-  <span aria-hidden="true">&bull;</span>
-  <span>Main: Super Chowk, Lodhran</span>
+  <span class="topbar-dot" aria-hidden="true">&bull;</span>
+  <span>1 Clinic — Super Chowk, Lodhran</span>
 </div>
 
 <header class="site">
@@ -138,7 +111,8 @@
   <div class="drawer-contact">
     <a href="tel:03051974180">0305-1974180</a> &bull; <a href="tel:03008681452">0300-8681452</a><br>
     Timings: 10:00 AM – 10:00 PM<br>
-    Main: Super Chowk, Lodhran
+    Open 7 days a week<br>
+    1 Clinic — Super Chowk, Lodhran
   </div>
 </aside>
 
@@ -161,104 +135,98 @@
 <!-- ===== HEADER BLOCK — copy ends here ===== -->
 
 <main id="main-content">
-<section class="store-hero">
+
+  <section class="store-hero">
     <p class="eyebrow">Al Kareem Physio Store</p>
     <h1>Clinic Products</h1>
-    <p class="lead">All physiotherapy products under one roof — at the clinic in Lodhran.</p>
-
+    <p class="lead">All physiotherapy products under one roof &mdash; at the clinic in Lodhran. Seven real products from the clinic&rsquo;s Facebook Store page.</p>
     <div class="search-bar" role="search">
-      <input type="search" id="store-search" placeholder="Search products…" aria-label="Search products">
+      <label class="visually-hidden" for="product-search">Search products</label>
+      <input type="search" id="product-search" class="search-input" placeholder="Search products&hellip;" aria-label="Search products" autocomplete="off">
     </div>
     <div class="cat-chips" role="group" aria-label="Product categories">
-      <button class="chip active" type="button" data-category="all" aria-pressed="true">All Products</button>
-      <button class="chip" type="button" data-category="heating-pads">Heating Pads</button>
-      <button class="chip" type="button" data-category="rehabilitation-equipment">Physiotherapy / Rehabilitation Equipment</button>
-      <button class="chip" type="button" data-category="exercise-fitness">Exercise &amp; Fitness Accessories</button>
-      <button class="chip" type="button" data-category="pain-management">Pain Management Products</button>
-      <button class="chip" type="button" data-category="medical-support">Medical Support &amp; Braces</button>
-      <button class="chip" type="button" data-category="patient-care">Patient Care Equipment</button>
+      <button class="active" type="button" data-category="all" aria-pressed="true">All Products</button>
+      <button type="button" data-category="exercise-fitness">Exercise &amp; Fitness</button>
+      <button type="button" data-category="rehabilitation-equipment">Rehabilitation Equipment</button>
+      <button type="button" data-category="daily-living-aids">Daily Living Aids</button>
     </div>
-    <p class="confirm-note">Categories as listed on the clinic&rsquo;s Facebook Store page.</p>
+    <div class="help-strip">
+      <span>Free home delivery within Lodhran City</span>
+      <span>WhatsApp: +92 305 1974180</span>
+      <span>Call: 0305-1974180</span>
+    </div>
+    <p class="note">Photos are generic illustrations of the product type &mdash; real product photos from the clinic&rsquo;s Facebook page will replace them. Ask on WhatsApp to see a product at the clinic.</p>
   </section>
 
   <section aria-label="Products">
     <div class="product-grid" id="product-grid">
-      <article class="card product-card" data-category="rehabilitation-equipment">
+
+      <article class="card product-card" data-name="Shoulder Pulley Exercise Device" data-cat="rehabilitation-equipment">
+        <div class="product-media"><img src="images/product-shoulder-pulley.jpg" alt="Photo for illustration &mdash; Shoulder Pulley Exercise Device" width="1200" height="1200" loading="lazy"></div>
         <span class="tag">Physiotherapy / Rehabilitation Equipment</span>
         <h3><a href="product-shoulder-pulley.html">Shoulder Pulley Exercise Device</a></h3>
         <p>Door-mounted pulley by Fitness Box. Shoulder mobility and rehab, frozen shoulder, post-injury recovery, rotator cuff strengthening and pain relief.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store post, 18 Nov 2026. Free home delivery.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store post, 18 Nov 2026. Free home delivery.</p>
         <p class="price">Rs 850</p>
-        <div class="card-actions">
-          <button class="btn outline add-to-cart" type="button" data-add-to-cart="shoulder-pulley" data-product="shoulder-pulley" data-name="Shoulder Pulley" data-price="850">Add to Cart</button>
-          <a class="link-btn" href="product-shoulder-pulley.html">View details →</a>
-        </div>
+        <div class="card-actions"><button class="btn add-to-cart" type="button" data-add-to-cart="shoulder-pulley">Add to Cart</button> <a class="link-btn" href="product-shoulder-pulley.html">View details &rarr;</a></div>
       </article>
-      <article class="card product-card" data-category="patient-care">
+      <article class="card product-card" data-name="Adjustable Aluminum Folding Walking Walker" data-cat="daily-living-aids">
+        <div class="product-media"><img src="images/product-walker.jpg" alt="Photo for illustration &mdash; Adjustable Aluminum Folding Walking Walker" width="1200" height="1238" loading="lazy"></div>
         <span class="tag">Patient Care Equipment</span>
         <h3>Adjustable Aluminum Folding Walking Walker</h3>
-        <p>Lightweight, foldable walker with adjustable height — for elderly users, post-surgery recovery, injury or weakness, and balance support.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p>Lightweight, foldable walker with adjustable height &mdash; for elderly users, post-surgery recovery, injury or weakness, and balance support.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
-      <article class="card product-card" data-category="pain-management">
+      <article class="card product-card" data-name="Massage Gun / Fascia Gun" data-cat="exercise-fitness">
+        <div class="product-media"><img src="images/product-massage-gun.jpg" alt="Photo for illustration &mdash; Massage Gun / Fascia Gun" width="1024" height="1024" loading="lazy"></div>
         <span class="tag">Pain Management Products</span>
         <h3>Massage Gun / Fascia Gun</h3>
         <p>Deep-tissue massage for muscle recovery, pain relief and stiffness.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
-      <article class="card product-card" data-category="patient-care">
+      <article class="card product-card" data-name="Digital Thermometer" data-cat="daily-living-aids">
+        <div class="product-media"><img src="images/product-thermometer.jpg" alt="Photo for illustration &mdash; Digital Thermometer" width="900" height="900" loading="lazy"></div>
         <span class="tag">Patient Care Equipment</span>
         <h3>Digital Thermometer</h3>
         <p>LifeChek TD-7000 / BestLife BN-BDT101. Fast, accurate temperature reading and fever monitoring.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
-      <article class="card product-card" data-category="heating-pads">
+      <article class="card product-card" data-name="ATOM King Size Heating Pad" data-cat="rehabilitation-equipment">
+        <div class="product-media"><img src="images/product-heating-pad.jpg" alt="Photo for illustration &mdash; ATOM King Size Heating Pad" width="800" height="971" loading="lazy"></div>
         <span class="tag">Heating Pads</span>
         <h3>ATOM King Size Heating Pad</h3>
         <p>King-size heating pad for pain relief, muscle stiffness, back and joint pain, cramps and cold weather.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store post, 16 Nov 2026.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store post, 16 Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
-      <article class="card product-card" data-category="rehabilitation-equipment">
+      <article class="card product-card" data-name="Care Vision 3-in-1 Combo TENS Machine" data-cat="rehabilitation-equipment">
+        <div class="product-media"><img src="images/product-tens.jpg" alt="Photo for illustration &mdash; Care Vision 3-in-1 Combo TENS Machine" width="640" height="481" loading="lazy"></div>
         <span class="tag">Physiotherapy / Rehabilitation Equipment</span>
         <h3>Care Vision 3-in-1 Combo TENS Machine</h3>
-        <p>TENS + EMS + Massage modes — for back, neck and shoulder pain, joint pain, muscle stiffness, sports injuries and post-surgery recovery. Free home delivery.</p>
-        <p class="source-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
+        <p>TENS + EMS + Massage modes &mdash; for back, neck and shoulder pain, joint pain, muscle stiffness, sports injuries and post-surgery recovery. Free home delivery.</p>
+        <p class="price-note">From the clinic&rsquo;s Facebook Store page, Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
-      <article class="card product-card" data-category="patient-care">
+      <article class="card product-card" data-name="Blood Pressure Monitors" data-cat="daily-living-aids">
+        <div class="product-media"><img src="images/product-bp-monitor.jpg" alt="Photo for illustration &mdash; Blood Pressure Monitors" width="1200" height="628" loading="lazy"></div>
         <span class="tag">Patient Care Equipment</span>
         <h3>Blood Pressure Monitors</h3>
-        <p>Digital blood pressure monitors — CERTEZA, Medico and UCheck. Shown in photos on the clinic&rsquo;s Facebook Store page.</p>
-        <p class="source-note">Seen in photos attached to the clinic&rsquo;s Facebook Store post, 17 Nov 2026.</p>
+        <p>Digital blood pressure monitors &mdash; CERTEZA, Medico and UCheck.</p>
+        <p class="price-note">Seen in photos attached to the clinic&rsquo;s Facebook Store post, 17 Nov 2026.</p>
         <p class="price">Price on WhatsApp</p>
-        <div class="card-actions">
-          <a class="btn outline" href="https://wa.me/923051974180">Ask on WhatsApp</a>
-        </div>
+        <div class="card-actions"><a class="btn wa-btn" href="https://wa.me/923051974180">Ask on WhatsApp</a></div>
       </article>
     </div>
-    <div class="empty-state" id="product-no-results" hidden>No products match that search or category.</div>
+    <div class="empty-state" id="product-no-results" hidden>No products match that search or category. Try a different word, or ask on WhatsApp.</div>
   </section>
-
-  <p class="coming-soon">More products are added as the clinic lists them — ask on WhatsApp for anything not shown here.</p>
 
   <section aria-labelledby="equipment-heading">
     <div class="section-head">
@@ -282,15 +250,35 @@
     <div class="section-head">
       <h2 id="delivery-heading">Delivery</h2>
     </div>
-    <p class="note">Free home delivery within Lodhran City.</p>
+    <div class="panel">
+      <p>Free home delivery within Lodhran City.</p>
+      <p class="note">Order the Shoulder Pulley here (demo checkout &mdash; no payment step), or message the clinic on WhatsApp for any product: +92 305 1974180.</p>
+      <p><a class="btn wa-btn" href="https://wa.me/923051974180">WhatsApp the Store</a></p>
+    </div>
   </section>
 
-  <section aria-labelledby="reviews-heading">
+  <section class="testimonials" aria-labelledby="reviews-heading">
     <div class="section-head">
-      <h2 id="reviews-heading">Customer Reviews</h2>
+      <p class="eyebrow">Patient reviews</p>
+      <h2 id="reviews-heading">What Our Patients Say</h2>
     </div>
-    <div class="empty-state">No reviews yet — real reviews will appear here once shared.</div>
+    <div class="panel reviews-fallback">
+      <h3>Reviews live on Facebook</h3>
+      <p>Patient reviews are published on the clinic&rsquo;s Facebook page.</p>
+      <p><a class="btn navy" href="https://facebook.com/people/Al-Kareem-Medical-Physio-Store/100086538205155/" target="_blank" rel="noopener">Read patient reviews on our Facebook page &rarr;</a></p>
+    </div>
   </section>
+
+  <section class="cta-band">
+    <h2>Ready to Start Your Recovery?</h2>
+    <p>Book an appointment or message the clinic on WhatsApp.</p>
+    <div class="cta-actions">
+      <a class="btn" href="book.html">Book Appointment</a>
+      <a class="btn wa-btn" href="https://wa.me/923051974180">WhatsApp Us</a>
+    </div>
+    <p class="cta-note">WhatsApp: +92 305 1974180</p>
+  </section>
+
 </main>
 
 <a class="wa-float" href="https://wa.me/923051974180" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -334,45 +322,10 @@
       </ul>
     </div>
   </div>
-  <div class="bottom">Demo preview — Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
+  <div class="bottom">Al Kareem Physiotherapy and Rehabilitation Centre, Lodhran. Built by Hasnain / Beatix Studio.</div>
 </footer>
 
-<script>
-  // Store-only category filter + search (shared app.js owns search toggle, drawer and cart).
-  (function () {
-    var chips = document.querySelectorAll('.cat-chips .chip');
-    var cards = Array.prototype.slice.call(document.querySelectorAll('.product-card'));
-    var none = document.getElementById('product-no-results');
-    var activeCat = 'all';
-    var query = '';
-    function applyFilter() {
-      var visible = 0;
-      cards.forEach(function (card) {
-        var okCat = activeCat === 'all' || card.getAttribute('data-category') === activeCat;
-        var okQ = !query || card.textContent.toLowerCase().indexOf(query) !== -1;
-        var show = okCat && okQ;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-      if (none) none.hidden = visible !== 0;
-    }
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        chips.forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-pressed', 'false'); });
-        chip.classList.add('active');
-        chip.setAttribute('aria-pressed', 'true');
-        activeCat = chip.getAttribute('data-category');
-        applyFilter();
-      });
-    });
-    var search = document.getElementById('store-search');
-    if (search) {
-      search.addEventListener('input', function () {
-        query = search.value.trim().toLowerCase();
-        applyFilter();
-      });
-    }
-  })();
-</script>
+
+<a class="back-to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></a>
 </body>
 </html>
