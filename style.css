@@ -1142,3 +1142,82 @@ footer .social-icon:hover { background: var(--blue); border-color: var(--blue); 
   .reveal { opacity: 1 !important; transform: none !important; }
   .hero-copy, .hero-media { animation: none !important; }
 }
+
+/* ==========================================================================
+   18. Compact footer (v2b) + two-tile trust strip + placeholder reviews.
+   Appended after every media query so these overrides win the cascade.
+   No layout/animation system touched; navy/blue theme unchanged.
+   ========================================================================== */
+
+/* --- Compact footer: tight padding, 3 columns, one phone per 44px row
+   instead of stacking contact + nav links, nav + credit move to the
+   bottom bar (one row on desktop). --- */
+.foot-inner {
+  padding: 20px 20px 14px;
+  grid-template-columns: 1.05fr 1.25fr 1.1fr;
+  gap: 28px;
+}
+.foot-inner h3 { font-size: 14px; margin: 0 0 6px; }
+.foot-inner p, .foot-inner li { font-size: 13.5px; line-height: 1.55; }
+.foot-inner li { margin-bottom: 2px; }
+.foot-inner strong { color: #fff; }
+.foot-brand { margin-bottom: 8px; gap: 10px; }
+.foot-brand img.logo-img { width: 40px; height: 40px; }
+.foot-name { font-size: 15px; }
+.foot-tag { margin: 0 0 4px; }
+.foot-note { margin: 0 0 8px; font-size: 12.5px; }
+.foot-inner .social-icons li { margin: 0; }
+.foot-inner .social-icons a { padding: 0; display: inline-flex; }
+.foot-hours { margin: 8px 0 0; }
+.foot-phones { margin: 0; }
+.foot-phones span { display: block; }
+.foot-mail { margin: 0; }
+footer .bottom {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 2px 28px;
+  padding: 8px 20px; text-align: left;
+}
+.foot-nav a {
+  color: #fff; font-weight: 600; font-size: 13.5px;
+  display: inline-block; min-width: 44px; min-height: 44px; padding: 10px 4px;
+}
+.foot-nav a:hover { color: #9cc4e8; }
+.foot-credit { margin: 0; font-size: 13px; color: #9db8d2; }
+
+@media (max-width: 900px) {
+  .foot-inner { gap: 24px; padding: 20px 20px 12px; }
+}
+@media (max-width: 680px) {
+  .foot-inner { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px 12px; }
+  footer .bottom { justify-content: center; text-align: center; }
+  .foot-credit { flex-basis: 100%; }
+}
+
+/* --- Two-tile trust strip (homepage only): AHPC + Home Care, balanced. --- */
+.trust-strip.trust-strip--2 { grid-template-columns: repeat(2, 1fr); }
+.trust-strip.trust-strip--2 .t {
+  grid-column: auto; border-top: none;
+  border-left: 1px solid var(--line-soft);
+}
+.trust-strip.trust-strip--2 .t:first-child { border-left: none; }
+
+/* --- Placeholder review cards: dashed, muted, clearly labelled Sample.
+   No names, quotes or ratings anywhere in these cards. --- */
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-top: 16px;
+}
+.review-placeholder {
+  border-style: dashed; background: var(--bg-soft); box-shadow: none;
+}
+.review-placeholder:hover { transform: none; box-shadow: none; }
+.review-placeholder p { margin-bottom: 0; }
+.review-sample-tag {
+  display: inline-block; font-size: 12px; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+  background: #fff; border: 1px solid var(--line);
+  border-radius: var(--r-pill); padding: 4px 10px;
+}
+@media (max-width: 680px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
